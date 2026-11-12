@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>파트보</title>
+<style>body{margin:0;background:#fff;font-family:-apple-system,"Apple SD Gothic Neo",sans-serif}</style></head>
+<body>
+<div id="hdr"><div class="t">천사들의 노래가 (찬송가 125장)</div><div class="p">__PART__</div><div class="q">♩ = __TEMPO__</div><div class="c">프랑스 전통 캐럴 GLORIA · 합주 편곡</div></div>
+<div id="paper"></div>
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.js"></script>
+<script>
+const abc = `__ABC__`;
+ABCJS.renderAbc("paper", abc, { oneSvgPerLine: true, staffwidth: 820, paddingtop: 0, paddingbottom: 0 });
+</script></body></html>
