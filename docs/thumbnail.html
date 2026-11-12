@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+  body { margin:0; }
+  .poster { width:1200px; height:630px; overflow:hidden; position:relative;
+    background: radial-gradient(circle at 18% 20%, #3b2a63 0%, #1a1530 45%, #0e0c1c 100%);
+    font-family: -apple-system, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color:#fff; }
+  .glow { position:absolute; width:520px; height:520px; right:-60px; top:-80px; border-radius:50%;
+    background: radial-gradient(circle, rgba(255,205,110,.35), rgba(255,205,110,0) 70%); }
+  .stars span { position:absolute; color:#ffd77a; opacity:.8; font-size:18px; }
+  .copy { position:absolute; left:72px; top:78px; width:520px; }
+  .kicker { display:inline-block; font-size:18px; font-weight:700; letter-spacing:.08em; color:#1a1530;
+    background:#ffd77a; padding:6px 14px; border-radius:999px; }
+  h1 { font-size:76px; line-height:1.05; margin:22px 0 14px; font-weight:900; letter-spacing:-.02em;
+    background: linear-gradient(180deg,#fff 30%, #ffe3a3 100%); -webkit-background-clip:text; color:transparent; }
+  .sub { font-size:27px; line-height:1.4; color:#e9e3ff; font-weight:600; margin:0 0 30px; }
+  .pills { display:flex; flex-wrap:wrap; gap:10px; }
+  .pill { font-size:18px; font-weight:700; padding:9px 16px; border-radius:12px;
+    background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.22); }
+  .inst { position:absolute; left:72px; bottom:44px; font-size:17px; color:#b9b0dc; letter-spacing:.02em; }
+  .mock { position:absolute; right:-40px; top:92px; width:640px; border-radius:14px; overflow:hidden;
+    background:#fff; transform: perspective(1400px) rotateY(-14deg) rotateX(4deg);
+    box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.15); }
+  .bar { height:30px; background:#ece8f5; display:flex; align-items:center; gap:7px; padding-left:14px; }
+  .bar i { width:11px; height:11px; border-radius:50%; display:block; }
+  .mock img { display:block; width:100%; }
+  .note { position:absolute; font-size:64px; color:#ffd77a; text-shadow:0 6px 18px rgba(0,0,0,.4); }
+</style></head>
+<body><div class="poster">
+  <div class="glow"></div>
+  <div class="stars"><span style="left:640px;top:40px">✦</span><span style="left:1120px;top:560px">✦</span><span style="left:560px;top:520px;font-size:12px">✦</span><span style="left:30px;top:300px;font-size:12px">✦</span></div>
+  <div class="copy">
+    <span class="kicker">찬송가 125장 · 합주 편곡</span>
+    <h1>천사들의<br>노래가</h1>
+    <p class="sub">듣고, 볼륨 섞고, 파트보 뽑는<br>성탄 합주 인터랙티브 악보</p>
+    <div class="pills"><span class="pill">🎚️ 13파트 믹서</span><span class="pill">📄 파트보 PDF</span><span class="pill">🎶 가사·셈여림</span></div>
+  </div>
+  <div class="inst">멜로디언 · 리코더 · 핸드벨 · 실로폰 · 소고 · 트라이앵글 · 탬버린 · 마라카스</div>
+  <div class="mock"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><img src="screenshot.png"></div>
+  <div class="note" style="left:600px;top:60px">♪</div>
+  <div class="note" style="left:1100px;top:30px;font-size:48px">♫</div>
+</div></body></html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>천사들의 노래가 합주</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  :root { --bg:#fffdf8; --fg:#222; --muted:#666; --line:#e5e0d5; --card:#fff; --accent:#8a5a1f; }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family: -apple-system, "Apple SD Gothic Neo", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  p, li { color: var(--muted); font-size: .9rem; }
+  #paper { overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px; }
+
+  .player { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:12px 0 16px; }
+  .transport { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .transport button { font:inherit; padding:6px 14px; border-radius:8px; border:1px solid var(--line); background:#f6f1e7; cursor:pointer; }
+  .transport button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .transport button:disabled { opacity:.5; cursor:default; }
+  #seek { flex:1; min-width:160px; accent-color:var(--accent); }
+  #time, #status { font-size:.85rem; color:var(--muted); font-variant-numeric: tabular-nums; }
+  .mixer { display:grid; grid-template-columns: minmax(110px,170px) 1fr 44px auto auto; gap:6px 10px; align-items:center; margin-top:12px; }
+  .mixer .grp { grid-column: 1 / -1; font-size:.75rem; color:var(--muted); border-top:1px solid var(--line); padding-top:6px; margin-top:4px; }
+  .mixer label { font-size:.9rem; }
+  .mixer input[type=range] { width:100%; accent-color:var(--accent); }
+  .mixer .val { font-size:.8rem; color:var(--muted); text-align:right; font-variant-numeric: tabular-nums; }
+  .mixer button { font:inherit; font-size:.75rem; padding:2px 8px; border-radius:6px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .mixer button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .presets { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .presets button { font:inherit; font-size:.8rem; padding:4px 10px; border-radius:6px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .downloads { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:0 0 16px; }
+  .downloads h2 { font-size:1rem; margin:0 0 8px; }
+  .downloads p { margin:0 0 8px; }
+  .downloads a { color:var(--accent); text-decoration:none; font-size:.9rem; }
+  .downloads a:hover { text-decoration:underline; }
+  .downloads a.full { font-weight:700; }
+  .downloads .parts { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:6px 12px; }
+  details { margin: 12px 0 16px; }
+  table { border-collapse: collapse; font-size: .85rem; }
+  td, th { border:1px solid var(--line); padding:4px 8px; text-align:left; }
+  @media (max-width: 560px) { .mixer { grid-template-columns: 90px 1fr 38px auto auto; } }
+  @media print {
+    .noprint { display:none; }
+    main { max-width:none; padding:0; }
+    #paper { border:none; padding:0; overflow:visible; }
+    h1 { display:none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>천사들의 노래가 — 합주 편곡</h1>
+  <p class="noprint">전주 2마디 → 1절 평이하게 (♩=96) → 전환 accel. (점점 빠르게) → 2절 화려하게 (♩=132, 스타카토) → 후렴 느리게 (♩=76) → 후렴 다시 빠르게 → "높이계신 주~님~께!" 높은 파로 피날레. 가사는 멜로디언 1 아래.</p>
+
+  <section class="player noprint">
+    <div class="transport">
+      <button id="play" class="primary" disabled>▶ 재생</button>
+      <button id="stop" disabled>■ 처음으로</button>
+      <input id="seek" type="range" min="0" max="1000" value="0" disabled>
+      <span id="time">0:00 / 0:00</span>
+    </div>
+    <div id="status">악기 소리 준비 중…</div>
+    <div class="mixer" id="mixer"></div>
+    <div class="presets">
+      <button data-preset="orch">오케스트라 균형</button>
+      <button data-preset="flat">모두 같게</button>
+      <button data-preset="melody">멜로디 강조</button>
+      <button data-preset="rhythm">반주만 (멜로디 끄기)</button>
+      <button data-preset="perc">리듬악기만</button>
+    </div>
+  </section>
+
+  <section class="downloads noprint">
+    <h2>악보 내려받기 (PDF)</h2>
+    <p><a class="full" href="천사들의노래가_합주.pdf" download>총보 (13파트 전체)</a></p>
+    <div class="parts"><a href="파트별/01_멜로디언1.pdf" download>멜로디언 1</a><a href="파트별/02_멜로디언2.pdf" download>멜로디언 2</a><a href="파트별/03_리코더1.pdf" download>리코더 1</a><a href="파트별/04_리코더2.pdf" download>리코더 2</a><a href="파트별/05_리코더3.pdf" download>리코더 3</a><a href="파트별/06_핸드벨1.pdf" download>핸드벨 1</a><a href="파트별/07_핸드벨2.pdf" download>핸드벨 2</a><a href="파트별/08_핸드벨3.pdf" download>핸드벨 3</a><a href="파트별/09_실로폰.pdf" download>실로폰</a><a href="파트별/10_소고.pdf" download>소고</a><a href="파트별/11_트라이앵글.pdf" download>트라이앵글</a><a href="파트별/12_탬버린.pdf" download>탬버린</a><a href="파트별/13_마라카스.pdf" download>마라카스</a></div>
+  </section>
+
+  <details class="noprint">
+    <summary>파트 안내</summary>
+    <table>
+      <tr><th>파트</th><th>역할</th><th>메모</th></tr>
+      <tr><td>멜로디언 1</td><td>멜로디</td><td>낮은 도(C4)~레(D5), 가사 표기</td></tr>
+      <tr><td>멜로디언 2</td><td>베이스(낮은음자리표)</td><td>낮은 파(F3)~레(D4), 2절은 스타카토 ♩♪♪</td></tr>
+      <tr><td>리코더 1</td><td>멜로디 → 2절 후렴 데스캔트</td><td>데스캔트는 높은 미·파·솔</td></tr>
+      <tr><td>리코더 2</td><td>알토(멜로디 아래 3도)</td><td>2절 앞소절 스타카토</td></tr>
+      <tr><td>리코더 3</td><td>긴 음 화음 → 2절 엇박 악센트</td><td></td></tr>
+      <tr><td>핸드벨 1·2·3</td><td>도·레·미 / 파·솔 / 라·높은도</td><td>8음 다장조 핸드벨만 사용(시♭ 없음)</td></tr>
+      <tr><td>실로폰</td><td>반짝이는 반주</td><td>도5~도6, 시♭ 없음</td></tr>
+      <tr><td>소고</td><td>기본 박</td><td>1절 1·3박 → 2절 강세 리듬 → 끝 4번 연타 후 한 번 쾅</td></tr>
+      <tr><td>트라이앵글</td><td>반짝임</td><td>1절 소절 첫 박 울림 → 2절 뒷박 8분 → 끝은 길게 울리기</td></tr>
+      <tr><td>탬버린</td><td>흥 돋우기</td><td>1절 후렴부터 2·4박 → 2절 ♩♫♩♫ → 끝은 흔들기</td></tr>
+      <tr><td>마라카스</td><td>잘게 채우기</td><td>1절 후렴 4분 → 2절 8분 → 끝은 흔들기</td></tr>
+    </table>
+  </details>
+  <div id="paper"></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.js"></script>
+<script>
+const abc = `X:1
+T:천사들의 노래가 (찬송가 125장)
+T:멜로디언 2 · 리코더 3 · 핸드벨 3 · 실로폰 1 · 리듬악기 4 합주
+C:프랑스 전통 캐럴 GLORIA · 합주 편곡
+M:4/4
+L:1/8
+Q:1/4=96
+%%score [M1 M2] [R1 R2 R3] [H1 H2 H3] X [P1 P2 P3 P4]
+%%MIDI drummap c 48
+%%MIDI drummap d 81
+%%MIDI drummap e 54
+%%MIDI drummap f 70
+%%barnumbers 1
+%%dynamic below
+K:F
+V:M1 name="멜로디언 1" snm="멜1"
+%%MIDI program 21
+z8 | z8 | !mf!A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 | "^후렴"!f!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"!mf!F2 G2 A2 B2 | [Q:1/4=108]c4 d4 | [Q:1/4=116]!f!e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게"!mf!.A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 | !f!.A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 | "^후렴"!ff!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"!p!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | !mf!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | [Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"!f!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | !ff!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!ff!!fermata!f8 |]
+w: 1.~천 사 들 의 노 래 가 하 늘 에 서 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님 께 * * * * * * * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님 께
+V:M2 name="멜로디언 2" snm="멜2" clef=bass
+%%MIDI program 21
+!mp!F,8 | C8 | !mf!F,4 A,4 | C4 F,4 | F,4 D4 | C4 F,4 | D4 A,4 | C4 F,4 | B,4 A,4 | C4 F,4 | F,4 D4 | G,4 C4 | F,4 B,4 | C4 B,4 | A,4 G,4 | C8 | F,4 D4 | G,4 C4 | F,4 B,4 | C4 B,4 | A,4 G,4 | C8 | F,8 | !mf!B,4 B,4 | G,4 G,4 | !f!C2 C2 C2 C2 | .C.C.C.C .C2 z2 | !mf!.F,2 .C .F, .F,2 .C .F, | .C2 .G, .C .F,2 .C .F, | .F,2 .C .F, .D2 .A, .D | .C2 .G, .C .F,2 .C .F, | .D2 .A, .D .F,2 .C .F, | .C2 .G, .C .F,2 .C .F, | .B,2 .F, .B, .F,2 .C .F, | .C2 .G, .C .F,2 .C .F, | !f!F,2 C F, D2 A, D | G,2 D G, C2 G, C | F,2 C F, B,2 F, B, | C2 G, C C2 G, C | F,2 C F, G,2 D G, | C2 F, C C2 G, C | !ff!F,2 C F, D2 A, D | G,2 D G, C2 G, C | F,2 C F, B,2 F, B, | C2 G, C C2 G, C | F,2 C F, G,2 D G, | C2 F, C C2 G, C | F,8 | !p!F,4 D4 | G,4 C4 | F,4 B,4 | C4 B,4 | A,4 G,4 | C8 | !mf!F,4 D4 | G,4 C4 | F,4 B,4 | C4 B,4 | A,4 G,4 | C8 | F,8 | !f!F,2 C F, D2 A, D | G,2 D G, C2 G, C | F,2 C F, B,2 F, B, | C2 G, C C2 G, C | F,2 C F, G,2 D G, | C2 F, C C2 G, C | !ff!F,2 C F, D2 A, D | G,2 D G, C2 G, C | F,2 C F, B,2 F, B, | C2 G, C C2 G, C | F,2 C F, G,2 D G, | C2 F, C C2 G, C | !fermata!F,8 |]
+V:R1 name="리코더 1" snm="리1"
+%%MIDI program 74
+z8 | z8 | !mf!A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 | !f!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | F8 | !mf!A2 B2 c2 d2 | c4 d4 | !f!e8 | .e2 .e2 .e2 z2 | !mp!.A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 | !mf!.A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 | "^데스캔트"!f!f4 f4 | g4 e4 | e4 f4 | e4 e4 | f4 g4 | f4 e4 | !ff!f4 f4 | g4 e4 | e4 f4 | e4 e4 | f4 g4 | f4 e4 | f8 | !p!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | !mf!c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | F8 | !f!f4 f4 | g4 e4 | e4 f4 | e4 e4 | f4 g4 | f4 e4 | !ff!f4 f4 | g4 e4 | e4 f4 | e4 e4 | A2 B2 c2 d2 | c4 e4 | !fermata!f8 |]
+V:R2 name="리코더 2" snm="리2"
+%%MIDI program 74
+z8 | z8 | !mf!F2 F2 F2 A2 | E3 E F4 | F2 E2 F2 A2 | F3 E F4 | F2 F2 F2 A2 | E3 E F4 | F2 D2 F2 A2 | F3 E F4 | !f!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | A8 | !mf!D4 F4 | G4 B4 | !f!G8 | .G2 .G2 .G2 z2 | !p!.F2 .F2 .F2 .A2 | E3 .E F4 | .F2 .E2 .F2 .A2 | F3 .E F4 | !mp!.F2 .F2 .F2 .A2 | E3 .E F4 | .F2 .D2 .F2 .A2 | F3 .E F4 | !f!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | !ff!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | A8 | !p!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | !mf!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | A8 | !f!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 E2 F2 G2 | F4 E4 | !ff!A4 BAGF | G4 AGFE | F4 GFED | E3 G G4 | F2 G2 A2 B2 | A4 G4 | !fermata!c8 |]
+V:R3 name="리코더 3" snm="리3"
+%%MIDI program 74
+z8 | z8 | !mp!c8 | G4 c4 | c4 d4 | G4 A4 | d4 c4 | G4 c4 | d4 c4 | G4 A4 | !f!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | !mf!d8 | d8 | !f!B8 | .B2 .B2 .B2 z2 | "^엇박"!mp!z2 !>!.c2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.d2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.d2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | !f!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !ff!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | c8 | !p!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | !mf!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | !f!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !ff!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !fermata!c8 |]
+V:H1 name="핸드벨 1 (도·레·미)" snm="벨1"
+%%MIDI program 14
+!mp!"F"C8 | "C7"E8 | !mf!"F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "C7"E4 "F"C4 | "Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C8 | !mf!"Bb"D8 | "Gm7"D8 | !f!"C7"E2 E2 E2 E2 | E2 E2 E2 z2 | !mp!"F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "C7"E4 "F"C4 | !mf!"Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 | !f!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | !ff!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"C2 C2 C2 C2 | !p!"F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | !mf!"F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C8 | !f!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | !ff!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"!fermata!C8 |]
+V:H2 name="핸드벨 2 (파·솔)" snm="벨2"
+%%MIDI program 14
+!mp!F8 | G8 | !mf!F8 | G4 F4 | F8 | G4 F4 | F8 | G4 F4 | F8 | G4 F4 | F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | !mf!F8 | G8 | !f!G2 G2 G2 G2 | G2 G2 G2 z2 | !mp!F8 | G4 F4 | F8 | G4 F4 | !mf!F8 | G4 F4 | F8 | G4 F4 | !f!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !ff!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | F2 F2 F2 F2 | !p!F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | !mf!F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | !f!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !ff!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !fermata!F8 |]
+V:H3 name="핸드벨 3 (라·높은도)" snm="벨3"
+%%MIDI program 14
+!mp!A8 | c8 | !mf!A8 | c4 A4 | A8 | c4 A4 | A8 | c4 A4 | z4 A4 | c4 A4 | A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | !mf!z8 | z8 | !f!c2 c2 c2 c2 | c2 c2 c2 z2 | !mp!A8 | c4 A4 | A8 | c4 A4 | !mf!A8 | c4 A4 | z4 A4 | c4 A4 | !f!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !ff!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | A2 A2 A2 A2 | !p!A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | !mf!A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | !f!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !ff!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !fermata!A8 |]
+V:X name="실로폰" snm="실로"
+%%MIDI program 13
+!mp!c'2 a2 c'2 a2 | g2 e2 g2 e2 | !mf!c'2 a2 c'2 a2 | g2 e2 c'2 a2 | c'2 a2 a2 f2 | g2 e2 c'2 a2 | a2 f2 c'2 a2 | g2 e2 c'2 a2 | f2 d2 c'2 a2 | g2 e2 c'2 a2 | !f!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | f2 a2 c'4 | !mf!cdefgac'2 | dgdg dgdg | !f!egc'g egc'g | egc'g c'2 z2 | !p!fac'a fac'a | egc'g fac'a | fac'a dfaf | egc'g fac'a | !mf!dfaf fac'a | egc'g fac'a | dfdf fac'a | egc'g fac'a | !f!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | !ff!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | fac'a fac'a | !p!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | !mf!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | f2 a2 c'4 | !f!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | !ff!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | fac' !fermata!c'5 |]
+V:P1 name="소고" snm="소고" clef=perc stafflines=1 middle=c
+%%MIDI channel 10
+[K:C clef=perc stafflines=1 middle=c]z8 | z8 | !mp!c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | !mf!c2 z2 c2 z2 | c2 c2 c2 c2 | !f!cccc cccc | !>!c2 !>!c2 !>!c2 z2 | !mf!!>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !f!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !ff!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 z6 | !p!c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | !mf!c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | "^cresc."c2 c2 c2 c2 | !f!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !ff!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | cccc cccc | !>!c2 !>!c2 !>!c2 !>!c2 | !>!c2 !fermata!z6 |]
+V:P2 name="트라이앵글" snm="트라" clef=perc stafflines=1 middle=d
+%%MIDI channel 10
+[K:C clef=perc stafflines=1 middle=d]!p!d8 | d8 | !mp!d8 | z8 | d8 | z8 | d8 | z8 | d8 | z8 | d8 | d8 | d8 | z8 | z8 | z8 | d8 | d8 | d8 | z8 | z8 | z8 | d8 | z8 | z8 | !f!dddd dddd | d2 d2 d2 z2 | !mp!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | !f!d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | !ff!d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d8 | !p!d8 | d8 | d8 | d8 | d8 | d8 | !mf!d8 | d8 | d8 | d8 | d8 | d8 | dddd dddd | !f!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | !ff!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | dddd dddd | dddd dddd | !fermata!d8 |]
+V:P3 name="탬버린" snm="탬버" clef=perc stafflines=1 middle=e
+%%MIDI channel 10
+[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !mp!z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z8 | !mf!z2 e2 z2 e2 | !f!e2 e2 e2 e2 | !>!e2 !>!e2 !>!e2 z2 | !mf!z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | !f!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !ff!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !>!e2 z6 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !mf!"^cresc."e2 e2 e2 e2 | !f!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !ff!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | eeee eeee | e2 e2 e2 e2 | "^흔들기~"!fermata!e8 |]
+V:P4 name="마라카스" snm="마라" clef=perc stafflines=1 middle=f
+%%MIDI channel 10
+[K:C clef=perc stafflines=1 middle=f]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !p!f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | !mp!f2 f2 f2 f2 | ffff ffff | !f!ffff ffff | f2 f2 f2 z2 | !mf!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !f!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !ff!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | f2 z6 | !p!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | !mf!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | ffff ffff | !f!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !ff!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | "^흔들기~"!fermata!f8 |]
+`;
+const visual = ABCJS.renderAbc("paper", abc, { add_classes: true, oneSvgPerLine: true, staffwidth: 700,
+  wrap: { minSpacing: 1.6, maxSpacing: 2.6, preferredMeasuresPerLine: 4 } })[0];
+
+// ---------- 믹서 ----------
+const PARTS = [
+  { id:"M1", name:"멜로디언 1", grp:"멜로디언" }, { id:"M2", name:"멜로디언 2 (베이스)" },
+  { id:"R1", name:"리코더 1", grp:"리코더" }, { id:"R2", name:"리코더 2" }, { id:"R3", name:"리코더 3" },
+  { id:"H1", name:"핸드벨 1", grp:"핸드벨" }, { id:"H2", name:"핸드벨 2" }, { id:"H3", name:"핸드벨 3" },
+  { id:"X",  name:"실로폰", grp:"실로폰" },
+  { id:"P1", name:"소고", grp:"리듬악기" }, { id:"P2", name:"트라이앵글" }, { id:"P3", name:"탬버린" }, { id:"P4", name:"마라카스" },
+];
+const PRESETS = {
+  // 음원마다 기본 음량이 달라서(리코더는 크고 실로폰은 작음) 실제 들리는 크기로 맞춘 값
+  orch:   [120, 85, 46, 37, 40, 60, 67, 83, 150, 105, 158, 125, 147],
+  flat:   [100, 90, 52, 57, 67, 92, 100, 128, 200, 158, 200, 200, 200],
+  melody: [140, 70, 60, 30, 30, 45, 50, 60, 110, 60, 95, 75, 90],
+  rhythm: [0, 90, 0, 40, 45, 70, 75, 95, 170, 126, 190, 150, 176],
+  perc:   [0, 0, 0, 0, 0, 0, 0, 0, 0, 147, 200, 175, 200],
+};
+const KEY = "angels-mixer-v4";
+let vols = PRESETS.orch.slice(), mutes = PARTS.map(() => false), solo = -1;
+try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.vols && s.vols.length === PARTS.length) { vols = s.vols; mutes = s.mutes || mutes; } } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify({ vols, mutes })); } catch (e) {} };
+
+const mixer = document.getElementById("mixer");
+const rows = PARTS.map((p, i) => {
+  if (p.grp) { const g = document.createElement("div"); g.className = "grp"; g.textContent = p.grp; mixer.appendChild(g); }
+  const label = document.createElement("label"); label.textContent = p.name; label.htmlFor = "v" + i;
+  const range = Object.assign(document.createElement("input"), { type:"range", id:"v" + i, min:0, max:200, value:vols[i] });
+  const val = document.createElement("span"); val.className = "val";
+  const mute = document.createElement("button"); mute.textContent = "끄기";
+  const so = document.createElement("button"); so.textContent = "솔로";
+  range.oninput = () => { vols[i] = +range.value; save(); refresh(); };
+  mute.onclick = () => { mutes[i] = !mutes[i]; save(); refresh(); };
+  so.onclick = () => { solo = solo === i ? -1 : i; refresh(); };
+  mixer.append(label, range, val, mute, so);
+  return { range, val, mute, so };
+});
+document.querySelectorAll("[data-preset]").forEach(b => b.onclick = () => {
+  vols = PRESETS[b.dataset.preset].slice(); mutes = PARTS.map(() => false); solo = -1; save(); refresh();
+});
+function gainOf(i) {
+  if (solo >= 0 && solo !== i) return 0;
+  if (mutes[i]) return 0;
+  return vols[i] / 100;
+}
+function refresh() {
+  rows.forEach((r, i) => {
+    r.range.value = vols[i]; r.val.textContent = vols[i] + "%";
+    r.mute.classList.toggle("on", mutes[i]); r.so.classList.toggle("on", solo === i);
+  });
+  if (gains) gains.forEach((g, i) => g.gain.setTargetAtTime(gainOf(i), ctx.currentTime, 0.03));
+}
+
+// ---------- 오디오: 악기마다 따로 렌더 → 각자 볼륨 ----------
+let ctx = null, buffers = null, gains = null, sources = [], startAt = 0, offset = 0, playing = false, duration = 0, raf = 0;
+const $ = id => document.getElementById(id);
+const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+
+async function prepare() {
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  buffers = [];
+  for (let i = 0; i < PARTS.length; i++) {
+    $("status").textContent = `악기 소리 준비 중… ${i + 1}/${PARTS.length} (${PARTS[i].name})`;
+    const synth = new ABCJS.synth.CreateSynth();
+    const off = PARTS.map((_, j) => j).filter(j => j !== i);
+    await synth.init({ audioContext: ctx, visualObj: visual, options: { voicesOff: off, chordsOff: true } });
+    await synth.prime();
+    buffers.push(synth.getAudioBuffer());
+  }
+  duration = Math.max(...buffers.map(b => b.duration));
+  gains = PARTS.map((_, i) => { const g = ctx.createGain(); g.gain.value = gainOf(i); g.connect(ctx.destination); return g; });
+  $("status").textContent = "준비 완료 — 재생 중에도 볼륨을 바꿀 수 있어요.";
+}
+
+function startFrom(pos) {
+  sources = buffers.map((buf, i) => { const s = ctx.createBufferSource(); s.buffer = buf; s.connect(gains[i]); return s; });
+  startAt = ctx.currentTime + 0.05 - pos;
+  sources.forEach(s => s.start(ctx.currentTime + 0.05, Math.min(pos, s.buffer.duration)));
+  playing = true; $("play").textContent = "❚❚ 일시정지"; tick();
+}
+function halt() { sources.forEach(s => { try { s.stop(); } catch (e) {} }); sources = []; playing = false; $("play").textContent = "▶ 재생"; cancelAnimationFrame(raf); }
+function now() { return playing ? ctx.currentTime - startAt : offset; }
+function tick() {
+  const t = now();
+  $("seek").value = Math.round(1000 * t / duration); $("time").textContent = `${fmt(t)} / ${fmt(duration)}`;
+  if (playing && t >= duration) { halt(); offset = 0; $("seek").value = 0; return; }
+  if (playing) raf = requestAnimationFrame(tick);
+}
+
+$("play").onclick = async () => {
+  if (!buffers) {
+    $("play").disabled = true;
+    try { await prepare(); } catch (e) { $("status").textContent = "소리를 불러오지 못했어요 (인터넷 연결 확인): " + (e.message || e); $("play").disabled = false; return; }
+    $("play").disabled = false; $("stop").disabled = false; $("seek").disabled = false;
+  }
+  if (ctx.state === "suspended") await ctx.resume();
+  if (playing) { offset = now(); halt(); } else startFrom(offset);
+};
+$("stop").onclick = () => { halt(); offset = 0; tick(); };
+$("seek").oninput = () => { const pos = duration * $("seek").value / 1000; if (playing) { halt(); startFrom(pos); } else { offset = pos; tick(); } };
+
+refresh();
+$("play").disabled = false;
+$("status").textContent = "▶ 재생을 누르면 악기별 소리를 준비해요 (처음 한 번, 몇 초 걸려요).";
+</script>
+</body>
+</html>
