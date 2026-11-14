@@ -378,11 +378,26 @@ if len(sys.argv) > 3:
     outdir = sys.argv[3]
     os.makedirs(outdir, exist_ok=True)
     part_tpl = open(os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), "part_template.html")).read()
+    part_abcs = {}
     for k, (vid, name, *_rest) in enumerate(voices, 1):
         if vid == "M1":
             pabc = make_abc("M1", "", ["M1"], part=True)
         else:
             pabc = make_abc(f"M1 {vid}", "", ["M1", vid], {"M1": "주멜로디"}, part=True)
+        part_abcs[vid] = pabc
         fname = part_file(k, name)
         open(os.path.join(outdir, fname + ".html"), "w").write(part_tpl.replace("__ABC__", pabc.replace("`", "\\`"))
                 .replace("__PART__", name + (" 파트 (주멜로디 · 가사)" if vid == "M1" else " 파트")).replace("__TEMPO__", str(TEMPO_A)))
+
+    # index.html 의 "악보 보기" 메뉴용 파트 악보 ABC — 총보 옆 part-scores.js 로 저장
+    # (index.html 은 template.html 과 별개로 손유지되는 파일: 믹서·메뉴·재생 하이라이트 포함.
+    #  파트 악보는 위 파트보 PDF 와 동일한 ABC 를 그대로 재사용한다.)
+    def jslit(s):
+        return s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+    js = ("// 자동 생성 — src/gen.py (./build.sh). 직접 수정 금지.\n"
+          "// index.html '악보 보기' 메뉴의 파트 악보 ABC (PDF 파트보와 동일, 멜로디 아래 가사·악기이름 첫 줄만).\n"
+          "const PART_ABC = {\n")
+    for vid, *_ in voices:
+        js += f'  "{vid}": `{jslit(part_abcs[vid])}`,\n'
+    js += "};\n"
+    open(os.path.join(os.path.dirname(os.path.abspath(sys.argv[2])), "part-scores.js"), "w").write(js)
