@@ -287,17 +287,19 @@ const TABS = [{ key:"score", label:"총보 (지휘자용)", pdf:"천사들의노
 
 let currentVisual = visual, playEvents = [], playPtr = 0, lastHiIdx = -1, hiNodes = [], curKey = "score";
 
-// 총보 한 시스템(13파트)이 화면 높이에 들어오도록 각 SVG 를 viewBox 비율대로 축소
-function fitConductor() {
+// 축소 비율: 총보 한 시스템(13파트)이 화면 높이에 들어오게 계산한 값을 총보·파트 악보에 똑같이 적용
+// → 모든 뷰의 음표 크기가 동일하게 "보기좋게 작게" 통일된다.
+let conductorNatH = 0;                                   // 총보 한 시스템의 자연 높이(스케일 기준)
+function scaleNow() {
+  const avail = Math.max(360, window.innerHeight - 96);  // 화면 세로에서 여백 제외
+  return Math.max(0.45, Math.min(1, avail / (conductorNatH || 1244)));
+}
+function applyScale() {                                  // #paper 안 모든 SVG 를 viewBox 비율대로 축소
   const svgs = [...$("paper").querySelectorAll("svg")];
   if (!svgs.length) return;
-  svgs.forEach(s => { s.style.width = ""; s.style.height = ""; });       // 자연 크기로 초기화 후 측정
-  let maxH = 0;
-  svgs.forEach(s => { const h = s.getBoundingClientRect().height; if (h > maxH) maxH = h; });
-  const avail = Math.max(360, window.innerHeight - 96);                  // 화면 세로에서 여백 제외
-  let scale = maxH ? avail / maxH : 1;
-  scale = Math.max(0.4, Math.min(1, scale));
-  if (scale >= 0.999) return;                                           // 이미 들어오면 그대로
+  svgs.forEach(s => { s.style.width = ""; s.style.height = ""; });      // 자연 크기로 초기화
+  const scale = scaleNow();
+  if (scale >= 0.999) return;
   svgs.forEach(s => { const r = s.getBoundingClientRect();
     s.style.width = (r.width * scale) + "px"; s.style.height = (r.height * scale) + "px"; });
 }
@@ -334,19 +336,22 @@ function selectTab(key) {
   curKey = key;
   const abcStr = key === "score" ? abc : (PART_ABC[key] || abc);
   currentVisual = ABCJS.renderAbc("paper", abcStr, key === "score" ? OPTS_SCORE : OPTS_PART)[0];
-  if (key === "score") fitConductor();                 // 지휘자용: 한 화면에 모든 악기
+  if (key === "score") {                               // 총보 렌더 시 스케일 기준 높이 측정
+    const hs = [...$("paper").querySelectorAll("svg")].map(s => s.getBoundingClientRect().height).filter(h => h > 150);
+    if (hs.length) conductorNatH = Math.max(...hs);
+  }
+  applyScale();                                        // 총보·파트 모두 같은 비율로 축소
   playEvents = buildTimings(currentVisual); playPtr = 0; lastHiIdx = -1; hiNodes = [];
   tabBtns.forEach((b, i) => b.classList.toggle("on", TABS[i].key === key));
   pdfEl.href = t.pdf; pdfEl.textContent = "🖨 " + t.label + " PDF 내려받기";
   if (playing) highlightAt(now() * 1000); // 재생 중 전환 시 새 악보에 즉시 표시
 }
 
-// 창 크기가 바뀌면 총보를 다시 화면에 맞춘다
+// 창 크기가 바뀌면 현재 악보를 다시 화면에 맞춘다(총보·파트 공통)
 let fitTimer = 0;
 window.addEventListener("resize", () => {
-  if (curKey !== "score") return;
   clearTimeout(fitTimer);
-  fitTimer = setTimeout(fitConductor, 200);
+  fitTimer = setTimeout(applyScale, 200);
 });
 
 // 초기 표시 = 총보(지휘자용, 화면 맞춤 렌더)
