@@ -274,8 +274,10 @@ $("status").textContent = "▶ 재생을 누르면 악기별 소리를 준비해
 // ---------- 악보 보기 메뉴 + 재생 중 음표 표시 ----------
 // 총보(지휘자용): 13파트를 한 시스템에 쌓은 그룹 악보. 파트 악보: PDF 파트보와 동일한
 // ABC(part-scores.js, gen.py 생성) — 멜로디 아래 가사(%%vocal below), 악기이름은 첫 줄만(snm="").
-const OPTS_SCORE = { add_classes:true, oneSvgPerLine:true, staffwidth:700,
-  wrap: { minSpacing:1.6, maxSpacing:2.6, preferredMeasuresPerLine:4 } };
+// 총보는 한 줄에 8마디(시스템 수를 줄여 스크롤 감소) + 렌더 후 화면 높이에 맞춰 축소(fitConductor)
+// → 13개 악기 한 시스템이 한 화면에 다 보이게 한다(지휘자용).
+const OPTS_SCORE = { add_classes:true, oneSvgPerLine:true, staffwidth:1280,
+  wrap: { minSpacing:1.4, maxSpacing:2.4, preferredMeasuresPerLine:8 } };
 const OPTS_PART = { add_classes:true, oneSvgPerLine:true, staffwidth:820 };
 
 const PART_PDF = ["01_멜로디언1","02_멜로디언2","03_리코더1","04_리코더2","05_리코더3",
@@ -283,7 +285,22 @@ const PART_PDF = ["01_멜로디언1","02_멜로디언2","03_리코더1","04_리�
 const TABS = [{ key:"score", label:"총보 (지휘자용)", pdf:"천사들의노래가_합주.pdf" }]
   .concat(PARTS.map((p, i) => ({ key: p.id, label: p.name, pdf: "파트별/" + PART_PDF[i] + ".pdf" })));
 
-let currentVisual = visual, playEvents = [], playPtr = 0, lastHiIdx = -1, hiNodes = [];
+let currentVisual = visual, playEvents = [], playPtr = 0, lastHiIdx = -1, hiNodes = [], curKey = "score";
+
+// 총보 한 시스템(13파트)이 화면 높이에 들어오도록 각 SVG 를 viewBox 비율대로 축소
+function fitConductor() {
+  const svgs = [...$("paper").querySelectorAll("svg")];
+  if (!svgs.length) return;
+  svgs.forEach(s => { s.style.width = ""; s.style.height = ""; });       // 자연 크기로 초기화 후 측정
+  let maxH = 0;
+  svgs.forEach(s => { const h = s.getBoundingClientRect().height; if (h > maxH) maxH = h; });
+  const avail = Math.max(360, window.innerHeight - 96);                  // 화면 세로에서 여백 제외
+  let scale = maxH ? avail / maxH : 1;
+  scale = Math.max(0.4, Math.min(1, scale));
+  if (scale >= 0.999) return;                                           // 이미 들어오면 그대로
+  svgs.forEach(s => { const r = s.getBoundingClientRect();
+    s.style.width = (r.width * scale) + "px"; s.style.height = (r.height * scale) + "px"; });
+}
 
 function buildTimings(v) {
   try {
@@ -314,18 +331,26 @@ const tabBtns = TABS.map(t => {
 });
 function selectTab(key) {
   const t = TABS.find(x => x.key === key); if (!t) return;
+  curKey = key;
   const abcStr = key === "score" ? abc : (PART_ABC[key] || abc);
   currentVisual = ABCJS.renderAbc("paper", abcStr, key === "score" ? OPTS_SCORE : OPTS_PART)[0];
+  if (key === "score") fitConductor();                 // 지휘자용: 한 화면에 모든 악기
   playEvents = buildTimings(currentVisual); playPtr = 0; lastHiIdx = -1; hiNodes = [];
   tabBtns.forEach((b, i) => b.classList.toggle("on", TABS[i].key === key));
   pdfEl.href = t.pdf; pdfEl.textContent = "🖨 " + t.label + " PDF 내려받기";
   if (playing) highlightAt(now() * 1000); // 재생 중 전환 시 새 악보에 즉시 표시
 }
 
-// 초기: 총보는 이미 렌더됨 — 타임라인만 준비
-playEvents = buildTimings(visual);
-tabBtns[0].classList.add("on");
-pdfEl.href = TABS[0].pdf; pdfEl.textContent = "🖨 " + TABS[0].label + " PDF 내려받기";
+// 창 크기가 바뀌면 총보를 다시 화면에 맞춘다
+let fitTimer = 0;
+window.addEventListener("resize", () => {
+  if (curKey !== "score") return;
+  clearTimeout(fitTimer);
+  fitTimer = setTimeout(fitConductor, 200);
+});
+
+// 초기 표시 = 총보(지휘자용, 화면 맞춤 렌더)
+selectTab("score");
 </script>
 </body>
 </html>
