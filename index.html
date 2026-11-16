@@ -287,21 +287,29 @@ const TABS = [{ key:"score", label:"총보 (지휘자용)", pdf:"천사들의노
 
 let currentVisual = visual, playEvents = [], playPtr = 0, lastHiIdx = -1, hiNodes = [], curKey = "score";
 
-// 축소 비율: 총보 한 시스템(13파트)이 화면 높이에 들어오게 계산한 값을 총보·파트 악보에 똑같이 적용
-// → 모든 뷰의 음표 크기가 동일하게 "보기좋게 작게" 통일된다.
-let conductorNatH = 0;                                   // 총보 한 시스템의 자연 높이(스케일 기준)
-function scaleNow() {
+// 축소 비율: 총보 한 시스템(13파트)이 화면 높이에 들어오게 계산한 값(데스크톱 음표 크기 통일 기준)에
+// 더해, 각 악보가 화면 "가로 폭"에도 들어가도록 둘 중 더 작은 비율로 축소한다.
+// → 데스크톱(폭 넉넉)은 높이 기준(지금과 동일), 모바일(폭 좁음)은 가로 기준으로 맞춰 악보가 안 잘린다.
+let conductorNatH = 0;                                   // 총보 한 시스템의 자연 높이(높이 스케일 기준)
+function heightScale() {
   const avail = Math.max(360, window.innerHeight - 96);  // 화면 세로에서 여백 제외
   return Math.max(0.45, Math.min(1, avail / (conductorNatH || 1244)));
 }
 function applyScale() {                                  // #paper 안 모든 SVG 를 viewBox 비율대로 축소
-  const svgs = [...$("paper").querySelectorAll("svg")];
+  const paper = $("paper");
+  const svgs = [...paper.querySelectorAll("svg")];
   if (!svgs.length) return;
   svgs.forEach(s => { s.style.width = ""; s.style.height = ""; });      // 자연 크기로 초기화
-  const scale = scaleNow();
-  if (scale >= 0.999) return;
-  svgs.forEach(s => { const r = s.getBoundingClientRect();
-    s.style.width = (r.width * scale) + "px"; s.style.height = (r.height * scale) + "px"; });
+  const hScale = heightScale();                                         // 높이 기준(총보 통일 크기)
+  const availW = Math.max(240, paper.clientWidth - 18);                 // 패딩 안쪽 가로 가용폭
+  svgs.forEach(s => {
+    const r = s.getBoundingClientRect();                               // 자연 크기(폭·높이)
+    const wScale = availW / r.width;                                   // 이 악보가 가로에 들어갈 비율
+    const scale = Math.min(hScale, wScale, 1);                         // 높이·가로 둘 다 만족하는 비율
+    if (scale >= 0.999) return;
+    s.style.width = (r.width * scale) + "px";
+    s.style.height = (r.height * scale) + "px";
+  });
 }
 
 function buildTimings(v) {
