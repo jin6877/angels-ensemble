@@ -19,6 +19,8 @@
   h1 { font-size: 1.4rem; margin: 0 0 4px; }
   p, li { color: var(--muted); font-size: .9rem; }
   #paper { overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px; }
+  /* 줄(시스템)마다 하나의 SVG — inline 기본값이면 줄 사이에 line-height 만큼 큰 여백이 생기므로 block 으로 쌓는다 */
+  #paper svg { display:block; margin:0 auto; }
 
   .player { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:12px 0 16px; }
   .transport { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
@@ -299,17 +301,28 @@ function applyScale() {                                  // #paper 안 모든 SV
   const paper = $("paper");
   const svgs = [...paper.querySelectorAll("svg")];
   if (!svgs.length) return;
-  svgs.forEach(s => { s.style.width = ""; s.style.height = ""; });      // 자연 크기로 초기화
   const hScale = heightScale();                                         // 높이 기준(총보 통일 크기)
   const availW = Math.max(240, paper.clientWidth - 18);                 // 패딩 안쪽 가로 가용폭
   svgs.forEach(s => {
-    const r = s.getBoundingClientRect();                               // 자연 크기(폭·높이)
-    const wScale = availW / r.width;                                   // 이 악보가 가로에 들어갈 비율
-    const scale = Math.min(hScale, wScale, 1);                         // 높이·가로 둘 다 만족하는 비율
-    if (scale >= 0.999) return;
-    s.style.width = (r.width * scale) + "px";
-    s.style.height = (r.height * scale) + "px";
+    // 자연 크기는 viewBox("minX minY W H") 에서 읽는다 — 속성/스타일을 바꿔도 변하지 않는 기준.
+    const vb = (s.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
+    const natW = vb[2], natH = vb[3];
+    if (!natW || !natH) return;
+    const scale = Math.min(hScale, availW / natW, 1);                   // 높이·가로 둘 다 만족하는 비율
+    const h = Math.round(natH * scale);
+    // ⚠️ width/height "속성" 을 축소해야 SVG 레이아웃 박스가 함께 줄어든다(viewBox 가 내용 스케일).
+    s.style.width = ""; s.style.height = "";
+    s.setAttribute("width", Math.round(natW * scale));
+    s.setAttribute("height", h);
+    // ⚠️ oneSvgPerLine 은 각 SVG 를 "height 고정 + overflow:hidden" div 로 감싼다. 그 래퍼도 같이 줄이지
+    //    않으면 div 가 원래 줄 높이를 유지해 줄 사이에 큰 빈 공간이 남는다(이번 여백의 진짜 원인).
+    const wrap = s.parentElement;
+    if (wrap && wrap !== paper && wrap.parentElement === paper) wrap.style.height = h + "px";
   });
+  // ⚠️ abcjs 는 #paper 컨테이너에도 "모든 줄 원래 높이 합" 을 height 로 박는다(overflow:hidden).
+  //    축소 후엔 내용보다 훨씬 커 아래에 거대한 빈 공간이 남으므로, 높이를 auto 로 되돌려 내용에 맞춘다.
+  paper.style.height = "auto";
+  paper.style.overflow = "";   // abcjs 가 건 overflow:hidden 제거 → CSS 의 overflow-x:auto 복원
 }
 
 function buildTimings(v) {
