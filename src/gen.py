@@ -80,14 +80,11 @@ def assemble(intro_s, a, trans, b, end_s):
 
 # ---------- 핸드벨: 2명, 각 2음만. 벨1=도·라(C,A) 벨2=레·솔(D,G) — 시♭ 없음 ----------
 # 코드별로 두 음 중 F장조에 어울리는 쪽을 고른다(불협 최소화).
-# 그냥 치면 실로폰과 겹치므로, 후렴·절정은 '딸랑딸랑'(16분 셰이크).
+# 그냥 치면 실로폰과 겹치므로, 후렴·절정은 '흔들기'로. 계속 흔들면 시끄러워서
+# 뒷박(2·4박)에만 ~(흔들기 기호) 붙인 음표 + 1·3박은 쉼(여백)으로 가볍게 "딸랑…딸랑".
 bell1 = {"F": "A", "F/C": "A", "FM7": "A", "Dm": "A", "Bb": "A", "C": "C", "C7": "C", "Gm7": "C"}  # {도, 라}
 bell2 = {"F": "D", "F/C": "D", "FM7": "D", "Dm": "D", "Bb": "D", "C": "G", "C7": "G", "Gm7": "G"}  # {레, 솔}
 BELLN = {0: bell1, 1: bell2}
-
-
-def shk(n):   # 반마디(2박)를 한 음의 16분음표로 딸랑딸랑 (8 x 1/16)
-    return " ".join([n + "/"] * 8)
 
 
 def bell_bars(chords, idx, chords_on, shake=False):
@@ -97,8 +94,9 @@ def bell_bars(chords, idx, chords_on, shake=False):
         na, nb = bn[a], bn[b]
         ca = f'"{a}"' if chords_on else ""
         cb = f'"{b}"' if chords_on else ""
-        if shake:   # 딸랑딸랑 — 반마디씩 16분 셰이크
-            out.append(f"{ca}{shk(na)} {(cb if a != b else '')}{shk(nb)}")
+        if shake:   # 흔들기 = 뒷박(2·4박)에만 ~ 붙인 음표, 1·3박은 쉼(여백)
+            cb2 = cb if a != b else ""
+            out.append(f"{ca}z2 ~{na}2 {cb2}z2 ~{nb}2")
         elif a == b:
             out.append(f"{ca}{na}8")
         else:
@@ -239,7 +237,7 @@ def perc_part(intro_b, a_verse, a_ref, trans, b_verse, b_ref, b_last, slow, slow
 
 # GM 드럼 번호 (악보 글자 → 소리). percmap은 middle= 과 같이 쓰면 안 먹혀서 drummap 사용
 DRUM = {"hi-mid-tom": 48, "maracas": 70, "bass-drum": 36}
-ROLL = " ".join(["f/"] * 16)      # 마라카스 16분 흔들기(딸랑딸랑) 한 마디
+ROLL = "z2 ~f2 z2 ~f2"            # 마라카스 흔들기 = 뒷박(2·4박)에 ~ 붙인 음표 + 1·3박 쉼(여백)
 perc_parts = [
     ("P1", "소고", "소고", "c", "hi-mid-tom", perc_part(
         ["z8", "z8"], "c2 z2 c2 z2", "c2 z2 c2 z2",
@@ -254,7 +252,7 @@ perc_parts = [
         ["!mp!f2 f2 f2 f2", "ffff ffff", "!f!ffff ffff", "f2 f2 f2 z2"],
         "ffff ffff", ROLL, "f2 z6",
         "f2 z2 f2 z2", "ffff ffff",
-        ROLL, (ROLL, ROLL, '"^흔들기~"!fermata!f8'),
+        ROLL, (ROLL, ROLL, '"^흔들기"~!fermata!f8'),
         {"A": {8: "!p!"}, "B": {0: "!mf!", R1: "!f!", R2: "!ff!"}})),
     # 큰북: 소리가 크므로 악센트 마디에만 1박씩 쾅 (1절·느린 후렴은 완전히 쉼)
     ("P3", "큰북", "큰북", "G", "bass-drum", perc_part(
