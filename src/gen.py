@@ -90,13 +90,14 @@ BELLN = {0: bell1, 1: bell2}
 def bell_bars(chords, idx, chords_on, shake=False):
     bn = BELLN[idx]
     out = []
-    for a, b in chords:
+    for i, (a, b) in enumerate(chords):
         na, nb = bn[a], bn[b]
         ca = f'"{a}"' if chords_on else ""
         cb = f'"{b}"' if chords_on else ""
-        if shake:   # 흔들기 = 뒷박(2·4박)에만 ~ 붙인 음표, 1·3박은 쉼(여백)
-            cb2 = cb if a != b else ""
-            out.append(f"{ca}z2 ~{na}2 {cb2}z2 ~{nb}2")
+        if shake:
+            # 모든 엇박에 넣으면 지저분 → 뒷박(4박)에만, 두 벨이 번갈아 2마디에 한 번씩 ~ 흔들기.
+            # (한 벨 기준 한 마디 걸러 쉼 = 여백. 합치면 매 마디 4박에 벨 하나씩 번갈아 울린다.)
+            out.append(f"z6 ~{nb}2" if i % 2 == idx else "z8")
         elif a == b:
             out.append(f"{ca}{na}8")
         else:
@@ -225,10 +226,10 @@ bass = assemble("!mp!F,8 | C8", "!mf!" + bass_a,
 # 구간 길이: 전주 2 | 1절 21 (앞 8 + 후렴 13) | 전환 4 | 2절 21 | 느린 후렴 13 | 빠른 후렴 13
 def perc_part(intro_b, a_verse, a_ref, trans, b_verse, b_ref, b_last, slow, slow_last, fast, fast_end, marks):
     a = [a_verse] * 8 + [a_ref] * 13 if isinstance(a_verse, str) else a_verse + a_ref
-    b = [b_verse] * 8 + [b_ref] * 13
+    b = [b_verse] * 8 + (list(b_ref) if isinstance(b_ref, list) else [b_ref] * 13)   # b_ref 는 마디별 리스트도 허용
     b[-1] = b_last
     sl = ([slow] * 12 if isinstance(slow, str) else slow) + [slow_last]
-    fa = [fast] * 13
+    fa = list(fast) if isinstance(fast, list) else [fast] * 13
     fa[HI], fa[JU], fa[KKE] = fast_end
     m = marks
     return " | ".join([J(intro_b), mark(a, m.get("A", {})), mark(trans, m.get("T", {})),
@@ -237,7 +238,7 @@ def perc_part(intro_b, a_verse, a_ref, trans, b_verse, b_ref, b_last, slow, slow
 
 # GM 드럼 번호 (악보 글자 → 소리). percmap은 middle= 과 같이 쓰면 안 먹혀서 drummap 사용
 DRUM = {"hi-mid-tom": 48, "maracas": 70, "bass-drum": 36}
-ROLL = "z2 ~f2 z2 ~f2"            # 마라카스 흔들기 = 뒷박(2·4박)에 ~ 붙인 음표 + 1·3박 쉼(여백)
+MAR = (["z2 ~f2 z4", "z8"] * 7)[:13]   # 마라카스 흔들기: 짝수 마디 2박에만 ~, 홀수 마디 쉼(여백) — 드문드문
 perc_parts = [
     ("P1", "소고", "소고", "c", "hi-mid-tom", perc_part(
         ["z8", "z8"], "c2 z2 c2 z2", "c2 z2 c2 z2",
@@ -250,9 +251,9 @@ perc_parts = [
     ("P2", "마라카스", "마라", "f", "maracas", perc_part(
         ["z8", "z8"], "z8", "f2 f2 f2 f2",
         ["!mp!f2 f2 f2 f2", "ffff ffff", "!f!ffff ffff", "f2 f2 f2 z2"],
-        "ffff ffff", ROLL, "f2 z6",
+        "ffff ffff", MAR, "f2 z6",
         "f2 z2 f2 z2", "ffff ffff",
-        ROLL, (ROLL, ROLL, '"^흔들기"~!fermata!f8'),
+        MAR, ("z2 ~f2 z4", "z8", '"^흔들기"~!fermata!f8'),
         {"A": {8: "!p!"}, "B": {0: "!mf!", R1: "!f!", R2: "!ff!"}})),
     # 큰북: 소리가 크므로 악센트 마디에만 1박씩 쾅 (1절·느린 후렴은 완전히 쉼)
     ("P3", "큰북", "큰북", "G", "bass-drum", perc_part(
