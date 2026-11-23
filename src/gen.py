@@ -95,9 +95,9 @@ def bell_bars(chords, idx, chords_on, shake=False):
         ca = f'"{a}"' if chords_on else ""
         cb = f'"{b}"' if chords_on else ""
         if shake:
-            # 모든 엇박에 넣으면 지저분 → 뒷박(4박)에만, 두 벨이 번갈아 2마디에 한 번씩 ~ 흔들기.
-            # (한 벨 기준 한 마디 걸러 쉼 = 여백. 합치면 매 마디 4박에 벨 하나씩 번갈아 울린다.)
-            out.append(f"z6 ~{nb}2" if i % 2 == idx else "z8")
+            # 모든 엇박에 넣으면 지저분 → 3박에만, 두 벨이 번갈아 2마디에 한 번씩 ~ 흔들기.
+            # (1·2박 쉼 → 3박 흔들기 → 4박 쉼. 한 벨 기준 한 마디 걸러 쉼 = 여백.)
+            out.append(f"z4 ~{nb}2 z2" if i % 2 == idx else "z8")
         elif a == b:
             out.append(f"{ca}{na}8")
         else:
