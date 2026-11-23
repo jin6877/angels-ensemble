@@ -496,17 +496,17 @@ V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H1
-[K:F clef=treble]"_f"z4 ~A2 z2 | z8 | z4 ~A2 z2 | z8 | z4 ~C2 z2 |
+[K:F clef=treble]"_f"z4 ~A2 z2 | z4 ~C2 z2 | z4 ~A2 z2 | z4 ~C2 z2 | z4 ~C2 z2 |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H1
-[K:F clef=treble]z8 | "_ff"z4 ~A2 z2 | z8 | z4 ~A2 z2 | z8 |
+[K:F clef=treble]z4 ~C2 z2 | "_ff"z4 ~A2 z2 | z4 ~C2 z2 | z4 ~A2 z2 | z4 ~C2 z2 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
 w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
 V:H1
-[K:F clef=treble]z4 ~C2 z2 | z8 | z4 ~A2 z2 | "_p""F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 |
+[K:F clef=treble]z4 ~C2 z2 | z4 ~C2 z2 | z4 ~A2 z2 | "_p""F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 |
 V:M1
 [K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
 w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
@@ -521,17 +521,17 @@ V:M1
 [K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H1
-[K:F clef=treble]"F"A8 | "_f"z4 ~A2 z2 | z8 | z4 ~A2 z2 | z8 |
+[K:F clef=treble]"F"A8 | "_f"z4 ~A2 z2 | z4 ~C2 z2 | z4 ~A2 z2 | z4 ~C2 z2 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
 w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
 V:H1
-[K:F clef=treble]z4 ~C2 z2 | z8 | "_ff"z4 ~A2 z2 | z8 | z4 ~A2 z2 |
+[K:F clef=treble]z4 ~C2 z2 | z4 ~C2 z2 | "_ff"z4 ~A2 z2 | z4 ~C2 z2 | z4 ~A2 z2 |
 V:M1
 [K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
 w: _ 광 을 높 이 계 신 주 님 께
 V:H1
-[K:F clef=treble]z8 | z4 ~C2 z2 | z8 | "F"!fermata!A8 |]
+[K:F clef=treble]z4 ~C2 z2 | z4 ~C2 z2 | z4 ~C2 z2 | "F"!fermata!A8 |]
 `,
   "H2": `X:1
 M:4/4
@@ -590,17 +590,17 @@ V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H2
-[K:F clef=treble]"_f"z8 | z4 ~G2 z2 | z8 | z4 ~G2 z2 | z8 |
+[K:F clef=treble]"_f"z4 ~D2 z2 | z4 ~G2 z2 | z4 ~D2 z2 | z4 ~G2 z2 | z4 ~G2 z2 |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H2
-[K:F clef=treble]z4 ~G2 z2 | "_ff"z8 | z4 ~G2 z2 | z8 | z4 ~G2 z2 |
+[K:F clef=treble]z4 ~G2 z2 | "_ff"z4 ~D2 z2 | z4 ~G2 z2 | z4 ~D2 z2 | z4 ~G2 z2 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
 w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
 V:H2
-[K:F clef=treble]z8 | z4 ~G2 z2 | z8 | "_p"D4 D4 | G4 G4 |
+[K:F clef=treble]z4 ~G2 z2 | z4 ~G2 z2 | z4 ~D2 z2 | "_p"D4 D4 | G4 G4 |
 V:M1
 [K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
 w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
@@ -615,17 +615,17 @@ V:M1
 [K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H2
-[K:F clef=treble]D8 | "_f"z8 | z4 ~G2 z2 | z8 | z4 ~G2 z2 |
+[K:F clef=treble]D8 | "_f"z4 ~D2 z2 | z4 ~G2 z2 | z4 ~D2 z2 | z4 ~G2 z2 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
 w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
 V:H2
-[K:F clef=treble]z8 | z4 ~G2 z2 | "_ff"z8 | z4 ~G2 z2 | z8 |
+[K:F clef=treble]z4 ~G2 z2 | z4 ~G2 z2 | "_ff"z4 ~D2 z2 | z4 ~G2 z2 | z4 ~D2 z2 |
 V:M1
 [K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
 w: _ 광 을 높 이 계 신 주 님 께
 V:H2
-[K:F clef=treble]z4 ~G2 z2 | z8 | z4 ~G2 z2 | !fermata!D8 |]
+[K:F clef=treble]z4 ~G2 z2 | z4 ~G2 z2 | z4 ~G2 z2 | !fermata!D8 |]
 `,
   "X": `X:1
 M:4/4

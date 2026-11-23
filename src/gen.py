@@ -90,14 +90,13 @@ BELLN = {0: bell1, 1: bell2}
 def bell_bars(chords, idx, chords_on, shake=False):
     bn = BELLN[idx]
     out = []
-    for i, (a, b) in enumerate(chords):
+    for a, b in chords:
         na, nb = bn[a], bn[b]
         ca = f'"{a}"' if chords_on else ""
         cb = f'"{b}"' if chords_on else ""
         if shake:
-            # 모든 엇박에 넣으면 지저분 → 3박에만, 두 벨이 번갈아 2마디에 한 번씩 ~ 흔들기.
-            # (1·2박 쉼 → 3박 흔들기 → 4박 쉼. 한 벨 기준 한 마디 걸러 쉼 = 여백.)
-            out.append(f"z4 ~{nb}2 z2" if i % 2 == idx else "z8")
+            # '영~' 후렴 — 두 벨 모두 3박에 ~ 흔들기 (1·2·4박 쉼 = 여백). 번갈아 아니라 다 같이.
+            out.append(f"z4 ~{nb}2 z2")
         elif a == b:
             out.append(f"{ca}{na}8")
         else:
