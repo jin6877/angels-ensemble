@@ -92,12 +92,12 @@
       <tr><td>리코더 1</td><td>멜로디 → 2절 후렴 데스캔트</td><td>데스캔트는 높은 미·파·솔</td></tr>
       <tr><td>리코더 2</td><td>알토(멜로디 아래 3도)</td><td>2절 앞소절 스타카토</td></tr>
       <tr><td>리코더 3</td><td>긴 음 화음 → 2절 엇박 악센트</td><td></td></tr>
-      <tr><td>핸드벨 1·2·3</td><td>도·레·미 / 파·솔 / 라·높은도</td><td>8음 다장조 핸드벨만 사용(시♭ 없음)</td></tr>
+      <tr><td>핸드벨 1 (도·라)</td><td>화음 울림 → 딸랑딸랑</td><td>2음(도·라)만 사용. 후렴·절정은 16분 셰이크</td></tr>
+      <tr><td>핸드벨 2 (레·솔)</td><td>화음 울림 → 딸랑딸랑</td><td>2음(레·솔)만 사용. 후렴·절정은 16분 셰이크</td></tr>
       <tr><td>실로폰</td><td>반짝이는 반주</td><td>도5~도6, 시♭ 없음</td></tr>
       <tr><td>소고</td><td>기본 박</td><td>1절 1·3박 → 2절 강세 리듬 → 끝 4번 연타 후 한 번 쾅</td></tr>
-      <tr><td>트라이앵글</td><td>반짝임</td><td>1절 소절 첫 박 울림 → 2절 뒷박 8분 → 끝은 길게 울리기</td></tr>
-      <tr><td>탬버린</td><td>흥 돋우기</td><td>1절 후렴부터 2·4박 → 2절 ♩♫♩♫ → 끝은 흔들기</td></tr>
-      <tr><td>마라카스</td><td>잘게 채우기</td><td>1절 후렴 4분 → 2절 8분 → 끝은 흔들기</td></tr>
+      <tr><td>마라카스</td><td>잘게 채우기 → 흔들기</td><td>1절 후렴 4분 → 2절 8분 → 후렴·절정은 16분 흔들기(딸랑딸랑)</td></tr>
+      <tr><td>큰북</td><td>악센트</td><td>소리가 크므로 악센트 마디에만 1박씩 쾅 (1절·느린 후렴은 쉼)</td></tr>
     </table>
   </details>
   <section class="scores noprint">
@@ -112,16 +112,15 @@
 <script>
 const abc = `X:1
 T:천사들의 노래가 (찬송가 125장)
-T:멜로디언 2 · 리코더 3 · 핸드벨 3 · 실로폰 1 · 리듬악기 4 합주
+T:멜로디언 2 · 리코더 3 · 핸드벨 2 · 실로폰 1 · 리듬악기 3 합주
 C:프랑스 전통 캐럴 GLORIA · 합주 편곡
 M:4/4
 L:1/8
 Q:1/4=96
-%%score [M1 M2] [R1 R2 R3] [H1 H2 H3] X [P1 P2 P3 P4]
+%%score [M1 M2] [R1 R2 R3] [H1 H2] X [P1 P2 P3]
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%dynamic below
 K:F
@@ -141,30 +140,24 @@ z8 | z8 | !mf!F2 F2 F2 A2 | E3 E F4 | F2 E2 F2 A2 | F3 E F4 | F2 F2 F2 A2 | E3 E
 V:R3 name="리코더 3" snm="리3"
 %%MIDI program 74
 z8 | z8 | !mp!c8 | G4 c4 | c4 d4 | G4 A4 | d4 c4 | G4 c4 | d4 c4 | G4 A4 | !f!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | !mf!d8 | d8 | !f!B8 | .B2 .B2 .B2 z2 | "^엇박"!mp!z2 !>!.c2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.d2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | z2 !>!.d2 z2 !>!.c2 | z2 !>!.G2 z2 !>!.c2 | !f!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !ff!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | c8 | !p!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | !mf!c8 | d4 c4 | c4 d4 | c4 B4 | c4 d4 | c4 B4 | c8 | !f!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !ff!z2 !>!.c2 z2 !>!.d2 | z2 !>!.d2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.G2 z2 !>!.G2 | z2 !>!.c2 z2 !>!.d2 | z2 !>!.c2 z2 !>!.G2 | !fermata!c8 |]
-V:H1 name="핸드벨 1 (도·레·미)" snm="벨1"
+V:H1 name="핸드벨 1 (도·라)" snm="벨1"
 %%MIDI program 14
-!mp!"F"C8 | "C7"E8 | !mf!"F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "C7"E4 "F"C4 | "Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C8 | !mf!"Bb"D8 | "Gm7"D8 | !f!"C7"E2 E2 E2 E2 | E2 E2 E2 z2 | !mp!"F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 | "C7"E4 "F"C4 | !mf!"Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 | !f!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | !ff!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"C2 C2 C2 C2 | !p!"F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | !mf!"F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C8 | !f!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | !ff!"F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"!fermata!C8 |]
-V:H2 name="핸드벨 2 (파·솔)" snm="벨2"
+!mp!"F"A8 | "C7"C8 | !mf!"F"A8 | "C7"C4 "F"A4 | "F"A4 "Dm"A4 | "C7"C4 "F"A4 | "Dm"A4 "F"A4 | "C7"C4 "F"A4 | "Bb"A4 "F"A4 | "C7"C4 "F"A4 | "F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | "F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | "F"A8 | !mf!"Bb"z8 | "Gm7"C8 | !f!"C7"C2 C2 C2 C2 | C2 C2 C2 z2 | !mp!"F"A8 | "C7"C4 "F"A4 | "F"A4 "Dm"A4 | "C7"C4 "F"A4 | !mf!"Dm"A4 "F"A4 | "C7"C4 "F"A4 | "Bb"A4 "F"A4 | "C7"C4 "F"A4 | !f!"F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | !ff!"F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ | !p!"F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | !mf!"F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | "F"A8 | !f!"F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | !ff!"F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"!fermata!A8 |]
+V:H2 name="핸드벨 2 (레·솔)" snm="벨2"
 %%MIDI program 14
-!mp!F8 | G8 | !mf!F8 | G4 F4 | F8 | G4 F4 | F8 | G4 F4 | F8 | G4 F4 | F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | !mf!F8 | G8 | !f!G2 G2 G2 G2 | G2 G2 G2 z2 | !mp!F8 | G4 F4 | F8 | G4 F4 | !mf!F8 | G4 F4 | F8 | G4 F4 | !f!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !ff!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | F2 F2 F2 F2 | !p!F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | !mf!F8 | G8 | F8 | G8 | F4 G4 | F4 G4 | F8 | !f!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !ff!F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !fermata!F8 |]
-V:H3 name="핸드벨 3 (라·높은도)" snm="벨3"
-%%MIDI program 14
-!mp!A8 | c8 | !mf!A8 | c4 A4 | A8 | c4 A4 | A8 | c4 A4 | z4 A4 | c4 A4 | A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | !mf!z8 | z8 | !f!c2 c2 c2 c2 | c2 c2 c2 z2 | !mp!A8 | c4 A4 | A8 | c4 A4 | !mf!A8 | c4 A4 | z4 A4 | c4 A4 | !f!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !ff!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | A2 A2 A2 A2 | !p!A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | !mf!A8 | z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 | A8 | !f!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !ff!A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !fermata!A8 |]
+!mp!D8 | G8 | !mf!D8 | G4 D4 | D4 D4 | G4 D4 | D4 D4 | G4 D4 | D4 D4 | G4 D4 | D4 D4 | G4 G4 | D4 D4 | G4 G4 | D4 G4 | D4 G4 | D4 D4 | G4 G4 | D4 D4 | G4 G4 | D4 G4 | D4 G4 | D8 | !mf!z8 | G8 | !f!G2 G2 G2 G2 | G2 G2 G2 z2 | !mp!D8 | G4 D4 | D4 D4 | G4 D4 | !mf!D4 D4 | G4 D4 | D4 D4 | G4 D4 | !f!D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | !ff!D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | !p!D4 D4 | G4 G4 | D4 D4 | G4 G4 | D4 G4 | D4 G4 | !mf!D4 D4 | G4 G4 | D4 D4 | G4 G4 | D4 G4 | D4 G4 | D8 | !f!D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | !ff!D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | !fermata!D8 |]
 V:X name="실로폰" snm="실로"
 %%MIDI program 13
 !mp!c'2 a2 c'2 a2 | g2 e2 g2 e2 | !mf!c'2 a2 c'2 a2 | g2 e2 c'2 a2 | c'2 a2 a2 f2 | g2 e2 c'2 a2 | a2 f2 c'2 a2 | g2 e2 c'2 a2 | f2 d2 c'2 a2 | g2 e2 c'2 a2 | !f!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | f2 a2 c'4 | !mf!cdefgac'2 | dgdg dgdg | !f!egc'g egc'g | egc'g c'2 z2 | !p!fac'a fac'a | egc'g fac'a | fac'a dfaf | egc'g fac'a | !mf!dfaf fac'a | egc'g fac'a | dfdf fac'a | egc'g fac'a | !f!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | !ff!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | fac'a fac'a | !p!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | !mf!c'4 a4 | g4 e4 | a4 f4 | g4 e4 | a4 g4 | c'4 g4 | f2 a2 c'4 | !f!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | !ff!fac'a dfaf | dgdg egc'g | eac'a dfdf | egc'g egc'g | fac'a dgdg | cfaf egc'g | fac' !fermata!c'5 |]
 V:P1 name="소고" snm="소고" clef=perc stafflines=1 middle=c
 %%MIDI channel 10
 [K:C clef=perc stafflines=1 middle=c]z8 | z8 | !mp!c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | c2 z2 c2 z2 | !mf!c2 z2 c2 z2 | c2 c2 c2 c2 | !f!cccc cccc | !>!c2 !>!c2 !>!c2 z2 | !mf!!>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !>!c2 zc !>!c2 zc | !f!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !ff!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 z6 | !p!c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | !mf!c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | c2 z6 | "^cresc."c2 c2 c2 c2 | !f!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !ff!!>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | !>!c2 c2 !>!c2 c2 | cccc cccc | !>!c2 !>!c2 !>!c2 !>!c2 | !>!c2 !fermata!z6 |]
-V:P2 name="트라이앵글" snm="트라" clef=perc stafflines=1 middle=d
+V:P2 name="마라카스" snm="마라" clef=perc stafflines=1 middle=f
 %%MIDI channel 10
-[K:C clef=perc stafflines=1 middle=d]!p!d8 | d8 | !mp!d8 | z8 | d8 | z8 | d8 | z8 | d8 | z8 | d8 | d8 | d8 | z8 | z8 | z8 | d8 | d8 | d8 | z8 | z8 | z8 | d8 | z8 | z8 | !f!dddd dddd | d2 d2 d2 z2 | !mp!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | !f!d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | !ff!d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 | d8 | !p!d8 | d8 | d8 | d8 | d8 | d8 | !mf!d8 | d8 | d8 | d8 | d8 | d8 | dddd dddd | !f!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | !ff!zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | dddd dddd | dddd dddd | !fermata!d8 |]
-V:P3 name="탬버린" snm="탬버" clef=perc stafflines=1 middle=e
+[K:C clef=perc stafflines=1 middle=f]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !p!f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | !mp!f2 f2 f2 f2 | ffff ffff | !f!ffff ffff | f2 f2 f2 z2 | !mf!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !f!f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | !ff!f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f2 z6 | !p!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | !mf!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | ffff ffff | !f!f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | !ff!f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | "^흔들기~"!fermata!f8 |]
+V:P3 name="큰북" snm="큰북" clef=perc stafflines=1 middle=G
 %%MIDI channel 10
-[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !mp!z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z8 | !mf!z2 e2 z2 e2 | !f!e2 e2 e2 e2 | !>!e2 !>!e2 !>!e2 z2 | !mf!z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | !f!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !ff!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !>!e2 z6 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !mf!"^cresc."e2 e2 e2 e2 | !f!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | !ff!e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | eeee eeee | e2 e2 e2 e2 | "^흔들기~"!fermata!e8 |]
-V:P4 name="마라카스" snm="마라" clef=perc stafflines=1 middle=f
-%%MIDI channel 10
-[K:C clef=perc stafflines=1 middle=f]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !p!f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | !mp!f2 f2 f2 f2 | ffff ffff | !f!ffff ffff | f2 f2 f2 z2 | !mf!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !f!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !ff!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | f2 z6 | !p!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | !mf!f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | ffff ffff | !f!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | !ff!ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff | "^흔들기~"!fermata!f8 |]
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !>!G2 !>!G2 !>!G2 z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !f!!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !ff!!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z2 !>!G2 z2 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | !f!!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !ff!!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z2 !>!G2 z2 | !>!G2 z2 !>!G2 z2 | !>!G2 !fermata!z6 |]
 `;
 const visual = ABCJS.renderAbc("paper", abc, { add_classes: true, oneSvgPerLine: true, staffwidth: 700,
   wrap: { minSpacing: 1.6, maxSpacing: 2.6, preferredMeasuresPerLine: 4 } })[0];
@@ -173,19 +166,20 @@ const visual = ABCJS.renderAbc("paper", abc, { add_classes: true, oneSvgPerLine:
 const PARTS = [
   { id:"M1", name:"멜로디언 1", grp:"멜로디언" }, { id:"M2", name:"멜로디언 2 (베이스)" },
   { id:"R1", name:"리코더 1", grp:"리코더" }, { id:"R2", name:"리코더 2" }, { id:"R3", name:"리코더 3" },
-  { id:"H1", name:"핸드벨 1", grp:"핸드벨" }, { id:"H2", name:"핸드벨 2" }, { id:"H3", name:"핸드벨 3" },
+  { id:"H1", name:"핸드벨 1 (도·라)", grp:"핸드벨" }, { id:"H2", name:"핸드벨 2 (레·솔)" },
   { id:"X",  name:"실로폰", grp:"실로폰" },
-  { id:"P1", name:"소고", grp:"리듬악기" }, { id:"P2", name:"트라이앵글" }, { id:"P3", name:"탬버린" }, { id:"P4", name:"마라카스" },
+  { id:"P1", name:"소고", grp:"리듬악기" }, { id:"P2", name:"마라카스" }, { id:"P3", name:"큰북" },
 ];
 const PRESETS = {
   // 음원마다 기본 음량이 달라서(리코더는 크고 실로폰은 작음) 실제 들리는 크기로 맞춘 값
-  orch:   [120, 85, 46, 37, 40, 60, 67, 83, 150, 105, 158, 125, 147],
-  flat:   [100, 90, 52, 57, 67, 92, 100, 128, 200, 158, 200, 200, 200],
-  melody: [140, 70, 60, 30, 30, 45, 50, 60, 110, 60, 95, 75, 90],
-  rhythm: [0, 90, 0, 40, 45, 70, 75, 95, 170, 126, 190, 150, 176],
-  perc:   [0, 0, 0, 0, 0, 0, 0, 0, 0, 147, 200, 175, 200],
+  //        M1   M2   R1  R2  R3  H1  H2   X   소고  마라  큰북
+  orch:   [120,  85,  46, 37, 40, 60, 67, 150, 105, 147,  90],
+  flat:   [100,  90,  52, 57, 67, 92, 100, 200, 158, 200, 120],
+  melody: [140,  70,  60, 30, 30, 45, 50, 110,  60,  90,  40],
+  rhythm: [  0,  90,   0, 40, 45, 70, 75, 170, 126, 176, 110],
+  perc:   [  0,   0,   0,  0,  0,  0,  0,   0, 147, 200, 150],
 };
-const KEY = "angels-mixer-v4";
+const KEY = "angels-mixer-v5";
 let vols = PRESETS.orch.slice(), mutes = PARTS.map(() => false), solo = -1;
 try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.vols && s.vols.length === PARTS.length) { vols = s.vols; mutes = s.mutes || mutes; } } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify({ vols, mutes })); } catch (e) {} };
@@ -277,13 +271,13 @@ $("status").textContent = "▶ 재생을 누르면 악기별 소리를 준비해
 // 총보(지휘자용): 13파트를 한 시스템에 쌓은 그룹 악보. 파트 악보: PDF 파트보와 동일한
 // ABC(part-scores.js, gen.py 생성) — 멜로디 아래 가사(%%vocal below), 악기이름은 첫 줄만(snm="").
 // 총보는 한 줄에 8마디(시스템 수를 줄여 스크롤 감소) + 렌더 후 화면 높이에 맞춰 축소(fitConductor)
-// → 13개 악기 한 시스템이 한 화면에 다 보이게 한다(지휘자용).
+// → 11개 악기 한 시스템이 한 화면에 다 보이게 한다(지휘자용).
 const OPTS_SCORE = { add_classes:true, oneSvgPerLine:true, staffwidth:1280,
   wrap: { minSpacing:1.4, maxSpacing:2.4, preferredMeasuresPerLine:8 } };
 const OPTS_PART = { add_classes:true, oneSvgPerLine:true, staffwidth:820 };
 
 const PART_PDF = ["01_멜로디언1","02_멜로디언2","03_리코더1","04_리코더2","05_리코더3",
-  "06_핸드벨1","07_핸드벨2","08_핸드벨3","09_실로폰","10_소고","11_트라이앵글","12_탬버린","13_마라카스"];
+  "06_핸드벨1","07_핸드벨2","08_실로폰","09_소고","10_마라카스","11_큰북"];
 const TABS = [{ key:"score", label:"총보 (지휘자용)", pdf:"천사들의노래가_합주.pdf" }]
   .concat(PARTS.map((p, i) => ({ key: p.id, label: p.name, pdf: "파트별/" + PART_PDF[i] + ".pdf" })));
 

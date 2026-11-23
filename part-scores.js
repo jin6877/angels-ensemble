@@ -4,11 +4,11 @@ const PART_ABC = {
   "M1": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -66,11 +66,11 @@ w: _ 광 을 높 이 계 신 주 님 께
   "M2": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 M2
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -160,11 +160,11 @@ V:M2
   "R1": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 R1
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -254,11 +254,11 @@ V:R1
   "R2": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 R2
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -348,11 +348,11 @@ V:R2
   "R3": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 R3
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -442,11 +442,11 @@ V:R3
   "H1": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 H1
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -455,92 +455,92 @@ K:F
 %%vocal below
 V:M1 name="주멜로디" snm=""
 %%MIDI program 21
-V:H1 name="핸드벨 1 (도·레·미)" snm=""
+V:H1 name="핸드벨 1 (도·라)" snm=""
 %%MIDI program 14
 V:M1
 z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
 w: 1.~천 사 들 의 노 래 가 하 늘 에 서
 V:H1
-"_mp""F"C8 | "C7"E8 | "_mf""F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 |
+"_mp""F"A8 | "C7"C8 | "_mf""F"A8 | "C7"C4 "F"A4 | "F"A4 "Dm"A4 |
 V:M1
 [K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
 w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
 V:H1
-[K:F clef=treble]"C7"E4 "F"C4 | "Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 |
+[K:F clef=treble]"C7"C4 "F"A4 | "Dm"A4 "F"A4 | "C7"C4 "F"A4 | "Bb"A4 "F"A4 | "C7"C4 "F"A4 |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H1
-[K:F clef=treble]"F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 |
+[K:F clef=treble]"F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H1
-[K:F clef=treble]"F/C"C4 "C7"E4 | "F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 |
+[K:F clef=treble]"F/C"A4 "C7"C4 | "F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
 w: 높 이 계 신 주 님 께 * * * * * *
 V:H1
-[K:F clef=treble]"F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "F"C8 | "_mf""Bb"D8 | "Gm7"D8 |
+[K:F clef=treble]"F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | "F"A8 | "_mf""Bb"z8 | "Gm7"C8 |
 V:M1
 [K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
 w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
 V:H1
-[K:F clef=treble]"_f""C7"E2 E2 E2 E2 | E2 E2 E2 z2 | "_mp""F"C8 | "C7"E4 "F"C4 | "F"C4 "Dm"D4 |
+[K:F clef=treble]"_f""C7"C2 C2 C2 C2 | C2 C2 C2 z2 | "_mp""F"A8 | "C7"C4 "F"A4 | "F"A4 "Dm"A4 |
 V:M1
 [K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
 w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
 V:H1
-[K:F clef=treble]"C7"E4 "F"C4 | "_mf""Dm"D4 "F"C4 | "C7"E4 "F"C4 | "Bb"D4 "F"C4 | "C7"E4 "F"C4 |
+[K:F clef=treble]"C7"C4 "F"A4 | "_mf""Dm"A4 "F"A4 | "C7"C4 "F"A4 | "Bb"A4 "F"A4 | "C7"C4 "F"A4 |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H1
-[K:F clef=treble]"_f""F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 |
+[K:F clef=treble]"_f""F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H1
-[K:F clef=treble]"F/C"C2 C2 "C7"E2 E2 | "_ff""F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 |
+[K:F clef=treble]"F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "_ff""F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
 w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
 V:H1
-[K:F clef=treble]"F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"C2 C2 C2 C2 | "_p""F"C4 "Dm"D4 | "Gm7"D4 "C7"E4 |
+[K:F clef=treble]"F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ A/ | "_p""F"A4 "Dm"A4 | "Gm7"C4 "C7"C4 |
 V:M1
 [K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
 w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
 V:H1
-[K:F clef=treble]"FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 | "_mf""F"C4 "Dm"D4 |
+[K:F clef=treble]"FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 | "_mf""F"A4 "Dm"A4 |
 V:M1
 [K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
 w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
 V:H1
-[K:F clef=treble]"Gm7"D4 "C7"E4 | "FM7"C4 "Bb"D4 | "C"E4 "C7"E4 | "F"C4 "Gm7"D4 | "F/C"C4 "C7"E4 |
+[K:F clef=treble]"Gm7"C4 "C7"C4 | "FM7"A4 "Bb"A4 | "C"C4 "C7"C4 | "F"A4 "Gm7"C4 | "F/C"A4 "C7"C4 |
 V:M1
 [K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H1
-[K:F clef=treble]"F"C8 | "_f""F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 | "C"E2 E2 "C7"E2 E2 |
+[K:F clef=treble]"F"A8 | "_f""F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ | "C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
 w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
 V:H1
-[K:F clef=treble]"F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "_ff""F"C2 C2 "Dm"D2 D2 | "Gm7"D2 D2 "C7"E2 E2 | "FM7"C2 C2 "Bb"D2 D2 |
+[K:F clef=treble]"F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "_ff""F"A/ A/ A/ A/ A/ A/ A/ A/ "Dm"A/ A/ A/ A/ A/ A/ A/ A/ | "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "FM7"A/ A/ A/ A/ A/ A/ A/ A/ "Bb"A/ A/ A/ A/ A/ A/ A/ A/ |
 V:M1
 [K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
 w: _ 광 을 높 이 계 신 주 님 께
 V:H1
-[K:F clef=treble]"C"E2 E2 "C7"E2 E2 | "F"C2 C2 "Gm7"D2 D2 | "F/C"C2 C2 "C7"E2 E2 | "F"!fermata!C8 |]
+[K:F clef=treble]"C"C/ C/ C/ C/ C/ C/ C/ C/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"A/ A/ A/ A/ A/ A/ A/ A/ "Gm7"C/ C/ C/ C/ C/ C/ C/ C/ | "F/C"A/ A/ A/ A/ A/ A/ A/ A/ "C7"C/ C/ C/ C/ C/ C/ C/ C/ | "F"!fermata!A8 |]
 `,
   "H2": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 H2
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -549,186 +549,92 @@ K:F
 %%vocal below
 V:M1 name="주멜로디" snm=""
 %%MIDI program 21
-V:H2 name="핸드벨 2 (파·솔)" snm=""
+V:H2 name="핸드벨 2 (레·솔)" snm=""
 %%MIDI program 14
 V:M1
 z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
 w: 1.~천 사 들 의 노 래 가 하 늘 에 서
 V:H2
-"_mp"F8 | G8 | "_mf"F8 | G4 F4 | F8 |
+"_mp"D8 | G8 | "_mf"D8 | G4 D4 | D4 D4 |
 V:M1
 [K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
 w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
 V:H2
-[K:F clef=treble]G4 F4 | F8 | G4 F4 | F8 | G4 F4 |
+[K:F clef=treble]G4 D4 | D4 D4 | G4 D4 | D4 D4 | G4 D4 |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H2
-[K:F clef=treble]F8 | G8 | F8 | G8 | F4 G4 |
+[K:F clef=treble]D4 D4 | G4 G4 | D4 D4 | G4 G4 | D4 G4 |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H2
-[K:F clef=treble]F4 G4 | F8 | G8 | F8 | G8 |
+[K:F clef=treble]D4 G4 | D4 D4 | G4 G4 | D4 D4 | G4 G4 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
 w: 높 이 계 신 주 님 께 * * * * * *
 V:H2
-[K:F clef=treble]F4 G4 | F4 G4 | F8 | "_mf"F8 | G8 |
+[K:F clef=treble]D4 G4 | D4 G4 | D8 | "_mf"z8 | G8 |
 V:M1
 [K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
 w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
 V:H2
-[K:F clef=treble]"_f"G2 G2 G2 G2 | G2 G2 G2 z2 | "_mp"F8 | G4 F4 | F8 |
+[K:F clef=treble]"_f"G2 G2 G2 G2 | G2 G2 G2 z2 | "_mp"D8 | G4 D4 | D4 D4 |
 V:M1
 [K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
 w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
 V:H2
-[K:F clef=treble]G4 F4 | "_mf"F8 | G4 F4 | F8 | G4 F4 |
+[K:F clef=treble]G4 D4 | "_mf"D4 D4 | G4 D4 | D4 D4 | G4 D4 |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
 V:H2
-[K:F clef=treble]"_f"F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 G2 G2 |
+[K:F clef=treble]"_f"D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H2
-[K:F clef=treble]F2 F2 G2 G2 | "_ff"F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 |
+[K:F clef=treble]D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | "_ff"D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
 w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
 V:H2
-[K:F clef=treble]F2 F2 G2 G2 | F2 F2 G2 G2 | F2 F2 F2 F2 | "_p"F8 | G8 |
+[K:F clef=treble]D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | "_p"D4 D4 | G4 G4 |
 V:M1
 [K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
 w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
 V:H2
-[K:F clef=treble]F8 | G8 | F4 G4 | F4 G4 | "_mf"F8 |
+[K:F clef=treble]D4 D4 | G4 G4 | D4 G4 | D4 G4 | "_mf"D4 D4 |
 V:M1
 [K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
 w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
 V:H2
-[K:F clef=treble]G8 | F8 | G8 | F4 G4 | F4 G4 |
+[K:F clef=treble]G4 G4 | D4 D4 | G4 G4 | D4 G4 | D4 G4 |
 V:M1
 [K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
 V:H2
-[K:F clef=treble]F8 | "_f"F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 | G2 G2 G2 G2 |
+[K:F clef=treble]D8 | "_f"D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
 w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
 V:H2
-[K:F clef=treble]F2 F2 G2 G2 | F2 F2 G2 G2 | "_ff"F2 F2 F2 F2 | G2 G2 G2 G2 | F2 F2 F2 F2 |
+[K:F clef=treble]D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | "_ff"D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ | G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ D/ |
 V:M1
 [K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
 w: _ 광 을 높 이 계 신 주 님 께
 V:H2
-[K:F clef=treble]G2 G2 G2 G2 | F2 F2 G2 G2 | F2 F2 G2 G2 | !fermata!F8 |]
-`,
-  "H3": `X:1
-M:4/4
-L:1/8
-%%score M1 H3
-%%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
-%%MIDI drummap f 70
-%%barnumbers 1
-%%staffsep 52
-%%sysstaffsep 30
-%%annotationfont Times-BoldItalic 15
-K:F
-%%vocal below
-V:M1 name="주멜로디" snm=""
-%%MIDI program 21
-V:H3 name="핸드벨 3 (라·높은도)" snm=""
-%%MIDI program 14
-V:M1
-z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
-w: 1.~천 사 들 의 노 래 가 하 늘 에 서
-V:H3
-"_mp"A8 | c8 | "_mf"A8 | c4 A4 | A8 |
-V:M1
-[K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
-w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
-V:H3
-[K:F clef=treble]c4 A4 | A8 | c4 A4 | z4 A4 | c4 A4 |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:H3
-[K:F clef=treble]A8 | z4 c4 | A4 z4 | c8 | A4 z4 |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:H3
-[K:F clef=treble]A4 c4 | A8 | z4 c4 | A4 z4 | c8 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
-w: 높 이 계 신 주 님 께 * * * * * *
-V:H3
-[K:F clef=treble]A4 z4 | A4 c4 | A8 | "_mf"z8 | z8 |
-V:M1
-[K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
-w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
-V:H3
-[K:F clef=treble]"_f"c2 c2 c2 c2 | c2 c2 c2 z2 | "_mp"A8 | c4 A4 | A8 |
-V:M1
-[K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
-w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
-V:H3
-[K:F clef=treble]c4 A4 | "_mf"A8 | c4 A4 | z4 A4 | c4 A4 |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:H3
-[K:F clef=treble]"_f"A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 | A2 A2 z4 |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:H3
-[K:F clef=treble]A2 A2 c2 c2 | "_ff"A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
-w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
-V:H3
-[K:F clef=treble]A2 A2 z4 | A2 A2 c2 c2 | A2 A2 A2 A2 | "_p"A8 | z4 c4 |
-V:M1
-[K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
-w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
-V:H3
-[K:F clef=treble]A4 z4 | c8 | A4 z4 | A4 c4 | "_mf"A8 |
-V:M1
-[K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
-w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
-V:H3
-[K:F clef=treble]z4 c4 | A4 z4 | c8 | A4 z4 | A4 c4 |
-V:M1
-[K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:H3
-[K:F clef=treble]A8 | "_f"A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 | c2 c2 c2 c2 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
-w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
-V:H3
-[K:F clef=treble]A2 A2 z4 | A2 A2 c2 c2 | "_ff"A2 A2 A2 A2 | z4 c2 c2 | A2 A2 z4 |
-V:M1
-[K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
-w: _ 광 을 높 이 계 신 주 님 께
-V:H3
-[K:F clef=treble]c2 c2 c2 c2 | A2 A2 z4 | A2 A2 c2 c2 | !fermata!A8 |]
+[K:F clef=treble]G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | D/ D/ D/ D/ D/ D/ D/ D/ G/ G/ G/ G/ G/ G/ G/ G/ | !fermata!D8 |]
 `,
   "X": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 X
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -818,11 +724,11 @@ V:X
   "P1": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 P1
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -912,11 +818,11 @@ V:P1
   "P2": `X:1
 M:4/4
 L:1/8
+Q:1/4=96
 %%score M1 P2
 %%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
 %%MIDI drummap f 70
+%%MIDI drummap G 36
 %%barnumbers 1
 %%staffsep 52
 %%sysstaffsep 30
@@ -925,270 +831,176 @@ K:F
 %%vocal below
 V:M1 name="주멜로디" snm=""
 %%MIDI program 21
-V:P2 name="트라이앵글" snm="" clef=perc stafflines=1 middle=d
+V:P2 name="마라카스" snm="" clef=perc stafflines=1 middle=f
 %%MIDI channel 10
 V:M1
 z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
 w: 1.~천 사 들 의 노 래 가 하 늘 에 서
 V:P2
-[K:C clef=perc stafflines=1 middle=d]"_p"d8 | d8 | "_mp"d8 | z8 | d8 |
-V:M1
-[K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
-w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
-V:P2
-[K:C clef=perc stafflines=1 middle=d]z8 | d8 | z8 | d8 | z8 |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P2
-[K:C clef=perc stafflines=1 middle=d]d8 | d8 | d8 | z8 | z8 |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P2
-[K:C clef=perc stafflines=1 middle=d]z8 | d8 | d8 | d8 | z8 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
-w: 높 이 계 신 주 님 께 * * * * * *
-V:P2
-[K:C clef=perc stafflines=1 middle=d]z8 | z8 | d8 | z8 | z8 |
-V:M1
-[K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
-w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
-V:P2
-[K:C clef=perc stafflines=1 middle=d]"_f"dddd dddd | d2 d2 d2 z2 | "_mp"zd zd zd zd | zd zd zd zd | zd zd zd zd |
-V:M1
-[K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
-w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
-V:P2
-[K:C clef=perc stafflines=1 middle=d]zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P2
-[K:C clef=perc stafflines=1 middle=d]"_f"d4 d4 | d4 d4 | d4 d4 | d4 d4 | d4 d4 |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P2
-[K:C clef=perc stafflines=1 middle=d]d4 d4 | "_ff"d4 d4 | d4 d4 | d4 d4 | d4 d4 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
-w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
-V:P2
-[K:C clef=perc stafflines=1 middle=d]d4 d4 | d4 d4 | d8 | "_p"d8 | d8 |
-V:M1
-[K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
-w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
-V:P2
-[K:C clef=perc stafflines=1 middle=d]d8 | d8 | d8 | d8 | "_mf"d8 |
-V:M1
-[K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
-w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
-V:P2
-[K:C clef=perc stafflines=1 middle=d]d8 | d8 | d8 | d8 | d8 |
-V:M1
-[K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P2
-[K:C clef=perc stafflines=1 middle=d]dddd dddd | "_f"zd zd zd zd | zd zd zd zd | zd zd zd zd | zd zd zd zd |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
-w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
-V:P2
-[K:C clef=perc stafflines=1 middle=d]zd zd zd zd | zd zd zd zd | "_ff"zd zd zd zd | zd zd zd zd | zd zd zd zd |
-V:M1
-[K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
-w: _ 광 을 높 이 계 신 주 님 께
-V:P2
-[K:C clef=perc stafflines=1 middle=d]zd zd zd zd | dddd dddd | dddd dddd | !fermata!d8 |]
-`,
-  "P3": `X:1
-M:4/4
-L:1/8
-%%score M1 P3
-%%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
-%%MIDI drummap f 70
-%%barnumbers 1
-%%staffsep 52
-%%sysstaffsep 30
-%%annotationfont Times-BoldItalic 15
-K:F
-%%vocal below
-V:M1 name="주멜로디" snm=""
-%%MIDI program 21
-V:P3 name="탬버린" snm="" clef=perc stafflines=1 middle=e
-%%MIDI channel 10
-V:M1
-z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
-w: 1.~천 사 들 의 노 래 가 하 늘 에 서
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 |
-V:M1
-[K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
-w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P3
-[K:C clef=perc stafflines=1 middle=e]"_mp"z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
-w: 높 이 계 신 주 님 께 * * * * * *
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z2 e2 z2 e2 | z2 e2 z2 e2 | z2 e2 z2 e2 | z8 | "_mf"z2 e2 z2 e2 |
-V:M1
-[K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
-w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
-V:P3
-[K:C clef=perc stafflines=1 middle=e]"_f"e2 e2 e2 e2 | !>!e2 !>!e2 !>!e2 z2 | "_mf"z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 |
-V:M1
-[K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
-w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 | z2 .e2 z2 .e2 |
-V:M1
-[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
-w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P3
-[K:C clef=perc stafflines=1 middle=e]"_f"e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee |
-V:M1
-[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P3
-[K:C clef=perc stafflines=1 middle=e]e2 ee e2 ee | "_ff"e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
-w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
-V:P3
-[K:C clef=perc stafflines=1 middle=e]e2 ee e2 ee | e2 ee e2 ee | !>!e2 z6 | z8 | z8 |
-V:M1
-[K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
-w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 |
-V:M1
-[K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
-w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
-V:P3
-[K:C clef=perc stafflines=1 middle=e]z8 | z8 | z8 | z8 | z8 |
-V:M1
-[K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
-w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P3
-[K:C clef=perc stafflines=1 middle=e]"_mf""^cresc."e2 e2 e2 e2 | "_f"e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee |
-V:M1
-[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
-w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
-V:P3
-[K:C clef=perc stafflines=1 middle=e]e2 ee e2 ee | e2 ee e2 ee | "_ff"e2 ee e2 ee | e2 ee e2 ee | e2 ee e2 ee |
-V:M1
-[K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
-w: _ 광 을 높 이 계 신 주 님 께
-V:P3
-[K:C clef=perc stafflines=1 middle=e]e2 ee e2 ee | eeee eeee | e2 e2 e2 e2 | "^흔들기~"!fermata!e8 |]
-`,
-  "P4": `X:1
-M:4/4
-L:1/8
-%%score M1 P4
-%%MIDI drummap c 48
-%%MIDI drummap d 81
-%%MIDI drummap e 54
-%%MIDI drummap f 70
-%%barnumbers 1
-%%staffsep 52
-%%sysstaffsep 30
-%%annotationfont Times-BoldItalic 15
-K:F
-%%vocal below
-V:M1 name="주멜로디" snm=""
-%%MIDI program 21
-V:P4 name="마라카스" snm="" clef=perc stafflines=1 middle=f
-%%MIDI channel 10
-V:M1
-z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
-w: 1.~천 사 들 의 노 래 가 하 늘 에 서
-V:P4
 [K:C clef=perc stafflines=1 middle=f]z8 | z8 | z8 | z8 | z8 |
 V:M1
 [K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
 w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]z8 | z8 | z8 | z8 | z8 |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]"_p"f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
 w: 높 이 계 신 주 님 께 * * * * * *
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]f2 f2 f2 f2 | f2 f2 f2 f2 | f2 f2 f2 f2 | "_mp"f2 f2 f2 f2 | ffff ffff |
 V:M1
 [K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
 w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]"_f"ffff ffff | f2 f2 f2 z2 | "_mf"ffff ffff | ffff ffff | ffff ffff |
 V:M1
 [K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
 w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff |
 V:M1
 [K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
 w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
-V:P4
-[K:C clef=perc stafflines=1 middle=f]"_f"ffff ffff | ffff ffff | ffff ffff | ffff ffff | ffff ffff |
+V:P2
+[K:C clef=perc stafflines=1 middle=f]"_f"f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ |
 V:M1
 [K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P4
-[K:C clef=perc stafflines=1 middle=f]ffff ffff | "_ff"ffff ffff | ffff ffff | ffff ffff | ffff ffff |
+V:P2
+[K:C clef=perc stafflines=1 middle=f]f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | "_ff"f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
 w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
-V:P4
-[K:C clef=perc stafflines=1 middle=f]ffff ffff | ffff ffff | f2 z6 | "_p"f2 z2 f2 z2 | f2 z2 f2 z2 |
+V:P2
+[K:C clef=perc stafflines=1 middle=f]f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f2 z6 | "_p"f2 z2 f2 z2 | f2 z2 f2 z2 |
 V:M1
 [K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
 w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | "_mf"f2 z2 f2 z2 |
 V:M1
 [K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
 w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
-V:P4
+V:P2
 [K:C clef=perc stafflines=1 middle=f]f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 | f2 z2 f2 z2 |
 V:M1
 [K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
 w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
-V:P4
-[K:C clef=perc stafflines=1 middle=f]ffff ffff | "_f"ffff ffff | ffff ffff | ffff ffff | ffff ffff |
+V:P2
+[K:C clef=perc stafflines=1 middle=f]ffff ffff | "_f"f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ |
 V:M1
 [K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
 w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
-V:P4
-[K:C clef=perc stafflines=1 middle=f]ffff ffff | ffff ffff | "_ff"ffff ffff | ffff ffff | ffff ffff |
+V:P2
+[K:C clef=perc stafflines=1 middle=f]f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | "_ff"f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ |
 V:M1
 [K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
 w: _ 광 을 높 이 계 신 주 님 께
-V:P4
-[K:C clef=perc stafflines=1 middle=f]ffff ffff | ffff ffff | ffff ffff | "^흔들기~"!fermata!f8 |]
+V:P2
+[K:C clef=perc stafflines=1 middle=f]f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ f/ | "^흔들기~"!fermata!f8 |]
+`,
+  "P3": `X:1
+M:4/4
+L:1/8
+Q:1/4=96
+%%score M1 P3
+%%MIDI drummap c 48
+%%MIDI drummap f 70
+%%MIDI drummap G 36
+%%barnumbers 1
+%%staffsep 52
+%%sysstaffsep 30
+%%annotationfont Times-BoldItalic 15
+K:F
+%%vocal below
+V:M1 name="주멜로디" snm=""
+%%MIDI program 21
+V:P3 name="큰북" snm="" clef=perc stafflines=1 middle=G
+%%MIDI channel 10
+V:M1
+z8 | z8 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 |
+w: 1.~천 사 들 의 노 래 가 하 늘 에 서
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]A3 G F4 | A2 A2 A2 c2 | c3 B A4 | A2 G2 A2 c2 | A3 G F4 |
+w: 들 리 니 산 과 들 이 기 _ 뻐 메 아 리 쳐 울 린 다
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
+w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
+w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | F8 | [Q:1/4=100]"^전환 · accel. 점점 빠르게"F2 G2 A2 B2 | [Q:1/4=108]c4 d4 |
+w: 높 이 계 신 주 님 께 * * * * * *
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble][Q:1/4=116]e8 | [Q:1/4=124].e2 .e2 .e2 z2 | [Q:1/4=132]"^2절 화려하게".A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 |
+w: * * * * 2.~한 밤 중 에 목 자 들 양 떼 들 을
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | !>!G2 !>!G2 !>!G2 z2 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]A3 .G F4 | .A2 .A2 .A2 .c2 | c3 .B A4 | .A2 .G2 .A2 .c2 | A3 .G F4 |
+w: 지 킬 때 아 름 다 운 노 래 가 청 아 하 게 들 린 다
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]"^후렴"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 |
+w: 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신
+V:P3
+[K:C clef=perc stafflines=1 middle=G]"_f"!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 |
+V:M1
+[K:F clef=treble]A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
+w: 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
+V:P3
+[K:C clef=perc stafflines=1 middle=G]!>!G2 z6 | "_ff"!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 |
+V:M1
+[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | [Q:1/4=112]"^rit."F8 | [Q:1/4=76]"^후렴 느리게 (서정적으로)"c4 dcBA | B4 cBAG |
+w: 높 이 계 신 주 님 께 영 _ _ _ _ _ _ _ _ _
+V:P3
+[K:C clef=perc stafflines=1 middle=G]!>!G2 z6 | !>!G2 z6 | !>!G2 z2 !>!G2 z2 | z8 | z8 |
+V:M1
+[K:F clef=treble]A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 | c4 dcBA |
+w: _ _ _ _ _ _ 광 을 높 이 계 신 주 께 영 _ _ _ _
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble]B4 cBAG | A4 BAGF | G3 C C4 | F2 G2 A2 B2 | A4 G4 |
+w: _ _ _ _ _ _ _ _ _ _ _ 광 을 높 이 계 신 주 님
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | z8 | z8 | z8 | z8 |
+V:M1
+[K:F clef=treble][Q:1/4=104]"^accel."F8 | [Q:1/4=132]"^다시 빠르게!"c4 dcBA | B4 cBAG | A4 BAGF | G3 C C4 |
+w: 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 광 을
+V:P3
+[K:C clef=perc stafflines=1 middle=G]z8 | "_f"!>!G2 z6 | !>!G2 z6 | !>!G2 z6 | !>!G2 z6 |
+V:M1
+[K:F clef=treble]F2 G2 A2 B2 | A4 G4 | c4 dcBA | B4 cBAG | A4 BAGF |
+w: 높 이 계 신 주 께 영 _ _ _ _ _ _ _ _ _ _ _ _ _ _
+V:P3
+[K:C clef=perc stafflines=1 middle=G]!>!G2 z6 | !>!G2 z6 | "_ff"!>!G2 z6 | !>!G2 z6 | !>!G2 z6 |
+V:M1
+[K:F clef=treble]G3 C C4 | A2 B2 c2 d2 | [Q:1/4=100]"^rit."c4 e4 | [Q:1/4=69]"^Maestoso"!fermata!f8 |]
+w: _ 광 을 높 이 계 신 주 님 께
+V:P3
+[K:C clef=perc stafflines=1 middle=G]!>!G2 z6 | !>!G2 z2 !>!G2 z2 | !>!G2 z2 !>!G2 z2 | !>!G2 !fermata!z6 |]
 `,
 };

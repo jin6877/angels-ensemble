@@ -78,34 +78,37 @@ def assemble(intro_s, a, trans, b, end_s):
     return f"{intro_s} | {a} | {trans} | {b} | {end_s} |]"
 
 
-# ---------- 핸드벨: HB1(도레미) HB2(파솔) HB3(라·높은도) — 시♭ 벨 없이 ----------
-voicing = {
-    "F": ("C", "F", "A"), "F/C": ("C", "F", "A"), "FM7": ("C", "F", "A"),
-    "Dm": ("D", "F", "A"), "C": ("E", "G", "c"), "C7": ("E", "G", "c"),
-    "Gm7": ("D", "G", "z"), "Bb": ("D", "F", "z"),
-}
+# ---------- 핸드벨: 2명, 각 2음만. 벨1=도·라(C,A) 벨2=레·솔(D,G) — 시♭ 없음 ----------
+# 코드별로 두 음 중 F장조에 어울리는 쪽을 고른다(불협 최소화).
+# 그냥 치면 실로폰과 겹치므로, 후렴·절정은 '딸랑딸랑'(16분 셰이크).
+bell1 = {"F": "A", "F/C": "A", "FM7": "A", "Dm": "A", "Bb": "A", "C": "C", "C7": "C", "Gm7": "C"}  # {도, 라}
+bell2 = {"F": "D", "F/C": "D", "FM7": "D", "Dm": "D", "Bb": "D", "C": "G", "C7": "G", "Gm7": "G"}  # {레, 솔}
+BELLN = {0: bell1, 1: bell2}
 
 
-def bell_bars(chords, idx, chords_on, pulse=False):
+def shk(n):   # 반마디(2박)를 한 음의 16분음표로 딸랑딸랑 (8 x 1/16)
+    return " ".join([n + "/"] * 8)
+
+
+def bell_bars(chords, idx, chords_on, shake=False):
+    bn = BELLN[idx]
     out = []
     for a, b in chords:
-        na, nb = voicing[a][idx], voicing[b][idx]
+        na, nb = bn[a], bn[b]
         ca = f'"{a}"' if chords_on else ""
         cb = f'"{b}"' if chords_on else ""
-        if pulse:   # 4분음표로 계속 울림
-            ha = "z4" if na == "z" else f"{na}2 {na}2"
-            hb = "z4" if nb == "z" else f"{nb}2 {nb}2"
-            out.append(f"{ca}{ha} {cb if a != b else ''}{hb}")
-        elif a == b or (na == nb and not chords_on):
+        if shake:   # 딸랑딸랑 — 반마디씩 16분 셰이크
+            out.append(f"{ca}{shk(na)} {(cb if a != b else '')}{shk(nb)}")
+        elif a == b:
             out.append(f"{ca}{na}8")
         else:
             out.append(f"{ca}{na}4 {cb}{nb}4")
     return out
 
 
-bell_trans = [("D8", "D8", "E2 E2 E2 E2", "E2 E2 E2 z2"),
-              ("F8", "G8", "G2 G2 G2 G2", "G2 G2 G2 z2"),
-              ("z8", "z8", "c2 c2 c2 c2", "c2 c2 c2 z2")]
+# 전환(4마디): 두 벨 모두 4분 울림으로 accel 몰아가기
+bell_trans = [("z8", "C8", "C2 C2 C2 C2", "C2 C2 C2 z2"),
+              ("z8", "G8", "G2 G2 G2 G2", "G2 G2 G2 z2")]
 
 
 def bells(idx):
@@ -115,11 +118,11 @@ def bells(idx):
     a = "!mf!" + J(bell_bars(body, idx, wc))
     t1, t2, t3, t4 = bell_trans[idx]
     t = f"!mf!{q('Bb')}{t1} | {q('Gm7')}{t2} | !f!{q('C7')}{t3} | {t4}"
-    # 2절: 앞소절은 2분음표로 조용히(mp) → 후렴부터 4분음표로 계속 울림(f → ff)
-    b_bars = bell_bars(verse, idx, wc) + bell_bars(ref1 + ref2, idx, wc, pulse=True)
+    # 2절: 앞소절은 길게 울리고(mp) → 후렴부터 딸랑딸랑 셰이크(f → ff)
+    b_bars = bell_bars(verse, idx, wc) + bell_bars(ref1 + ref2, idx, wc, shake=True)
     b = mark(b_bars, {0: "!mp!", V2: "!mf!", R1: "!f!", R2: "!ff!"})
     slow = mark(bell_bars(REF, idx, wc), SLOW)
-    fast_bars = bell_bars(REF, idx, wc, pulse=True)
+    fast_bars = bell_bars(REF, idx, wc, shake=True)
     fast_bars[KKE] = with_fermata(bell_bars([["F", "F"]], idx, wc)[0])
     e = slow + " | " + mark(fast_bars, FAST)
     return "!mp!" + assemble(i, a, t, b, e)
@@ -235,8 +238,8 @@ def perc_part(intro_b, a_verse, a_ref, trans, b_verse, b_ref, b_last, slow, slow
 
 
 # GM 드럼 번호 (악보 글자 → 소리). percmap은 middle= 과 같이 쓰면 안 먹혀서 drummap 사용
-DRUM = {"hi-mid-tom": 48, "open-triangle": 81, "tambourine": 54, "maracas": 70}
-tri_a = (["d8", "z8"] * 4) + ["d8" if i in (0, 1, 2, 6, 7, 8, 12) else "z8" for i in range(13)]
+DRUM = {"hi-mid-tom": 48, "maracas": 70, "bass-drum": 36}
+ROLL = " ".join(["f/"] * 16)      # 마라카스 16분 흔들기(딸랑딸랑) 한 마디
 perc_parts = [
     ("P1", "소고", "소고", "c", "hi-mid-tom", perc_part(
         ["z8", "z8"], "c2 z2 c2 z2", "c2 z2 c2 z2",
@@ -245,27 +248,22 @@ perc_parts = [
         "c2 z6", '"^cresc."c2 c2 c2 c2',
         "!>!c2 c2 !>!c2 c2", ("cccc cccc", "!>!c2 !>!c2 !>!c2 !>!c2", "!>!c2 !fermata!z6"),
         {"A": {0: "!mp!"}, "T": {0: "!mf!", 2: "!f!"}, "B": {0: "!mf!", R1: "!f!", R2: "!ff!"}})),
-    ("P2", "트라이앵글", "트라", "d", "open-triangle", perc_part(
-        ["!p!d8", "d8"], tri_a[:8], tri_a[8:],
-        ["z8", "z8", "!f!dddd dddd", "d2 d2 d2 z2"],
-        "zd zd zd zd", "d4 d4", "d8",
-        "d8", "dddd dddd",
-        "zd zd zd zd", ("dddd dddd", "dddd dddd", "!fermata!d8"),
-        {"A": {0: "!mp!"}, "B": {0: "!mp!", R1: "!f!", R2: "!ff!"}})),
-    ("P3", "탬버린", "탬버", "e", "tambourine", perc_part(
-        ["z8", "z8"], "z8", "z2 e2 z2 e2",
-        ["z8", "!mf!z2 e2 z2 e2", "!f!e2 e2 e2 e2", "!>!e2 !>!e2 !>!e2 z2"],
-        "z2 .e2 z2 .e2", "e2 ee e2 ee", "!>!e2 z6",
-        "z8", '"^cresc."e2 e2 e2 e2',
-        "e2 ee e2 ee", ("eeee eeee", "e2 e2 e2 e2", '"^흔들기~"!fermata!e8'),
-        {"A": {8: "!mp!"}, "B": {0: "!mf!", R1: "!f!", R2: "!ff!"}, "S": {12: "!mf!"}})),
-    ("P4", "마라카스", "마라", "f", "maracas", perc_part(
+    # 마라카스: 1절 후렴 4분 → 2절 앞 8분 → 후렴·절정은 16분 흔들기(딸랑딸랑)
+    ("P2", "마라카스", "마라", "f", "maracas", perc_part(
         ["z8", "z8"], "z8", "f2 f2 f2 f2",
         ["!mp!f2 f2 f2 f2", "ffff ffff", "!f!ffff ffff", "f2 f2 f2 z2"],
-        "ffff ffff", "ffff ffff", "f2 z6",
+        "ffff ffff", ROLL, "f2 z6",
         "f2 z2 f2 z2", "ffff ffff",
-        "ffff ffff", ("ffff ffff", "ffff ffff", '"^흔들기~"!fermata!f8'),
+        ROLL, (ROLL, ROLL, '"^흔들기~"!fermata!f8'),
         {"A": {8: "!p!"}, "B": {0: "!mf!", R1: "!f!", R2: "!ff!"}})),
+    # 큰북: 소리가 크므로 악센트 마디에만 1박씩 쾅 (1절·느린 후렴은 완전히 쉼)
+    ("P3", "큰북", "큰북", "G", "bass-drum", perc_part(
+        ["z8", "z8"], "z8", "z8",
+        ["z8", "z8", "z8", "!>!G2 !>!G2 !>!G2 z2"],
+        "z8", "!>!G2 z6", "!>!G2 z2 !>!G2 z2",
+        "z8", "z8",
+        "!>!G2 z6", ("!>!G2 z2 !>!G2 z2", "!>!G2 z2 !>!G2 z2", "!>!G2 !fermata!z6"),
+        {"A": {}, "B": {R1: "!f!", R2: "!ff!"}, "S": {}, "F": {0: "!f!", P2: "!ff!"}})),
 ]
 
 voices = [
@@ -274,9 +272,8 @@ voices = [
     ("R1", "리코더 1", "리1", "", 74, rec1),
     ("R2", "리코더 2", "리2", "", 74, alto),
     ("R3", "리코더 3", "리3", "", 74, rec3),
-    ("H1", "핸드벨 1 (도·레·미)", "벨1", "", 14, bells(0)),
-    ("H2", "핸드벨 2 (파·솔)", "벨2", "", 14, bells(1)),
-    ("H3", "핸드벨 3 (라·높은도)", "벨3", "", 14, bells(2)),
+    ("H1", "핸드벨 1 (도·라)", "벨1", "", 14, bells(0)),
+    ("H2", "핸드벨 2 (레·솔)", "벨2", "", 14, bells(1)),
     ("X", "실로폰", "실로", "", 13, xylo()),
 ] + [
     (vid, name, sn, f" clef=perc stafflines=1 middle={pitch}", None, f"[K:C clef=perc stafflines=1 middle={pitch}]" + notes)
@@ -284,19 +281,25 @@ voices = [
 ]
 
 # ---------- 검사: 마디 길이 / 가사 음절 수 ----------
-NOTE = r"[_^=]?[A-Ga-gz][,']*\d*"
+NOTE = r"[_^=]?[A-Ga-gz][,']*\d*/*\d*"      # 16분(A/)·점음표(A3/2) 포함
 
 def clean(s):
     s = re.sub(r'"[^"]*"', "", s)
     s = re.sub(r"\[[A-Z]:[^\]]*\]", "", s)
     return re.sub(r"![^!]*!", "", s)
 
+def _dur(n):   # ABC 음표 길이를 1/8 단위로 (A=1, A2=2, A/=0.5, A3/2=1.5)
+    m = re.match(r"[_^=]?[A-Ga-gz][,']*(\d*)((?:/\d*)*)", n)
+    d = int(m.group(1)) if m.group(1) else 1
+    for sl in re.findall(r"/(\d*)", m.group(2)):
+        d = d / (int(sl) if sl else 2)
+    return d
+
 def check(name, s):
     bars = [b for b in re.split(r"\|\]|:\||\|:|\|", clean(s)) if b.strip()]
     for i, b in enumerate(bars):
-        t = sum(int(re.match(r"[_^=]?[A-Ga-gz][,']*(\d*)", n).group(1) or 1)
-                for n in re.findall(NOTE, b))
-        if t != 8:
+        t = sum(_dur(n) for n in re.findall(NOTE, b))
+        if abs(t - 8) > 1e-6:
             print(f"!! {name}: bar {i+1} = {t}/8 -> {b!r}", file=sys.stderr)
     return len(bars)
 
@@ -312,8 +315,8 @@ DRUMMAP = "".join(f"%%MIDI drummap {p} {DRUM[snd]}\n" for _, _, _, p, snd, _ in 
 
 def make_abc(score, subtitle, ids, rename=None, part=False):
     rename = rename or {}
-    if part:   # 파트보: 제목·파트명·빠르기는 HTML 머리글로 (공간 절약)
-        abc = (f"X:1\nM:4/4\nL:1/8\n%%score {score}\n{DRUMMAP}%%barnumbers 1\n"
+    if part:   # 파트보: 제목·파트명은 HTML 머리글로 (공간 절약). Q는 넣어야 재생 타이밍이 총보와 일치
+        abc = (f"X:1\nM:4/4\nL:1/8\nQ:1/4={TEMPO_A}\n%%score {score}\n{DRUMMAP}%%barnumbers 1\n"
                "%%staffsep 52\n%%sysstaffsep 30\n%%annotationfont Times-BoldItalic 15\nK:F\n%%vocal below\n")
     else:
         abc = (f"X:1\nT:천사들의 노래가 (찬송가 125장)\nT:{subtitle}\nC:프랑스 전통 캐럴 GLORIA · 합주 편곡\n"
@@ -361,8 +364,8 @@ def make_abc(score, subtitle, ids, rename=None, part=False):
 
 
 # ---------- 전체 총보 ----------
-abc = make_abc("[M1 M2] [R1 R2 R3] [H1 H2 H3] X [P1 P2 P3 P4]",
-               "멜로디언 2 · 리코더 3 · 핸드벨 3 · 실로폰 1 · 리듬악기 4 합주", [v[0] for v in voices])
+abc = make_abc("[M1 M2] [R1 R2 R3] [H1 H2] X [P1 P2 P3]",
+               "멜로디언 2 · 리코더 3 · 핸드벨 2 · 실로폰 1 · 리듬악기 3 합주", [v[0] for v in voices])
 def part_file(k, name):
     return f"{k:02d}_" + re.sub(r"[^0-9A-Za-z가-힣]", "", name.split("(")[0])
 
